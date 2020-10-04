@@ -74,7 +74,7 @@ export default class Embed implements CommandInterface {
             {
                 "title":"Eu sou o título.",
                 "description": "Eu sou a descrição.",
-                "color": "#ccc",
+                "color": "#ffcdd2",
                 "image_url": "https://i.imgur.com/6xq4R92.jpeg",
                 "author": "${message.author.username} - nome do autor.",
                 "thumbnail_url": "https://i.imgur.com/Cu0kddU.jpeg",
