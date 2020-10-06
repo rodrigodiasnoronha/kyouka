@@ -30,8 +30,10 @@ export const errorReplies = {
         errorMessage:
             'Verifique se você digitou o comando corretamente e tente novamente.',
     },
-
     userNotMuted: {
         errorMessage: 'Esse usuário não esta mutado.',
     },
+    newPrefixError: {
+        errorMessage: 'Você precisa digitar o novo prefixo do servidor.'
+    }
 };

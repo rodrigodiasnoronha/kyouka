@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js';
+import { Client, Collection, Message } from 'discord.js';
 import { Document } from 'mongoose';
 
 interface CommandInterface {
@@ -6,7 +6,20 @@ interface CommandInterface {
     description: string;
     args: string;
     aliases: Array<string>;
-    run(client: Client, message: Message, args: string[]): Promise<any> | any;
+    run: run1 | run2;
+}
+
+interface run1 {
+    (client: Client, message: Message, args: string[]): Promise<any> | any;
+}
+
+interface run2 {
+    (
+        client: Client,
+        message: Message,
+        args: string[],
+        prefixCollection: Collection<string, string>
+    ): Promise<Message | undefined> | Promise<any> | any;
 }
 
 interface MuteDocument extends Document {
@@ -16,7 +29,6 @@ interface MuteDocument extends Document {
     mute_time: Date;
     muted_by_id: string; // arma
 }
-
 
 interface GuildModelInterface extends Document {
     guild_name: string;

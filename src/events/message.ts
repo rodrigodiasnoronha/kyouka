@@ -1,4 +1,4 @@
-import {Message} from 'discord.js';
+import { Collection, Message } from 'discord.js';
 
 const prefix = process.env.BOT_PREFIX || '.';
 
@@ -8,9 +8,10 @@ import Clear from '../commands/moderation/clear';
 import Kick from '../commands/moderation/kick';
 import Mute from '../commands/moderation/mute';
 import Nickname from '../commands/moderation/nickname';
-import {Unmute} from '../commands/moderation/unmute';
+import { Unmute } from '../commands/moderation/unmute';
 import Embed from '../commands/utility/embed';
-import Autorole from "../commands/utility/autorole";
+import Autorole from '../commands/utility/autorole';
+import { Prefix } from '../commands/moderation/prefix';
 
 // commands instance
 const ban = new Ban();
@@ -21,13 +22,31 @@ const nickname = new Nickname();
 const clear = new Clear();
 const embed = new Embed();
 const autorole = new Autorole();
+const prefixCommand = new Prefix();
 
-export const message = async (message: Message) => {
-    if (message.author.bot) return;
+const defaultPrefix = process.env.BOT_PREFIX as string;
+
+export const message = async (
+    message: Message,
+    prefixCollection: Collection<string, string>
+) => {
+    if (message.author.bot || message.webhookID) return;
+
+    /**
+     *
+     * Verificações do prefixo do servidor
+     *
+     * */
+
+    let prefix = message.guild
+        ? prefixCollection.get(message.guild.id)
+        : defaultPrefix;
+
+    if (!prefix) {
+        prefix = defaultPrefix;
+    }
 
     if (!message.content.toLowerCase().startsWith(prefix)) return;
-
-    if (message.webhookID) return;
 
     /**
      *
@@ -64,4 +83,7 @@ export const message = async (message: Message) => {
 
     if (autorole.aliases.includes(command))
         return autorole.run(message.client, message, args);
+
+    if (prefixCommand.aliases.includes(command))
+        return prefixCommand.run(message.client, message, args, prefixCollection);
 };
