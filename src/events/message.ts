@@ -1,4 +1,5 @@
-import { Message } from 'discord.js';
+import {Message} from 'discord.js';
+
 const prefix = process.env.BOT_PREFIX || '.';
 
 // moderation commands
@@ -7,8 +8,9 @@ import Clear from '../commands/moderation/clear';
 import Kick from '../commands/moderation/kick';
 import Mute from '../commands/moderation/mute';
 import Nickname from '../commands/moderation/nickname';
-import { Unmute } from '../commands/moderation/unmute';
+import {Unmute} from '../commands/moderation/unmute';
 import Embed from '../commands/utility/embed';
+import Autorole from "../commands/utility/autorole";
 
 // commands instance
 const ban = new Ban();
@@ -18,6 +20,7 @@ const kick = new Kick();
 const nickname = new Nickname();
 const clear = new Clear();
 const embed = new Embed();
+const autorole = new Autorole();
 
 export const message = async (message: Message) => {
     if (message.author.bot) return;
@@ -58,4 +61,7 @@ export const message = async (message: Message) => {
 
     if (embed.aliases.includes(command))
         return embed.run(message.client, message, args);
+
+    if (autorole.aliases.includes(command))
+        return autorole.run(message.client, message, args);
 };

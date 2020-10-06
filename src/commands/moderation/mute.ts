@@ -2,6 +2,7 @@ import { Client, Guild, Message, Role } from 'discord.js';
 import { CommandInterface } from '../../types';
 import { sendErrorMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
+// @ts-ignore
 import ms from 'ms';
 
 export default class Mute implements CommandInterface {
@@ -31,6 +32,14 @@ export default class Mute implements CommandInterface {
         const user = message.mentions.users.first();
         if (!user) return sendErrorMessage(errorReplies.mentionUser, message);
 
+        if (user.id === message.author.id)
+            return sendErrorMessage(
+                {
+                    errorMessage: `${message.author.username} BAKA! Você não pode mutar você mesmo!`,
+                },
+                message
+            );
+
         // tempo de mute;
         const muteTime = args[1];
         const isValidTime = this.isMuteTimeValid(muteTime);
@@ -48,11 +57,16 @@ export default class Mute implements CommandInterface {
         if (!muteRole) return;
 
         // Sobrescreve as regras de outros cargos para o mute
-        message.guild?.channels.cache.forEach(async (channel, id) => {
-            await channel.createOverwrite(muteRole as Role, {
-                SEND_MESSAGES: false,
-                ADD_REACTIONS: false,
-            });
+        message.guild?.channels.cache.forEach((channel, id) => {
+            channel
+                .createOverwrite(muteRole as Role, {
+                    SEND_MESSAGES: false,
+                    ADD_REACTIONS: false,
+                })
+                .then(() => {})
+                .catch(() => {
+                    console.log('ocorreu um erro ao mutar o usuário');
+                });
         });
 
         message.guild?.member(user)?.roles.add(muteRole!.id);
@@ -66,7 +80,7 @@ export default class Mute implements CommandInterface {
     }
 
     async createMuteRole(client: Client, guild: Guild | null) {
-        return await client.guilds.cache.get(guild!.id)?.roles.create({
+        const role = await client.guilds.cache.get(guild!.id)?.roles.create({
             data: {
                 name: 'Kyouka Mute',
                 color: '#cccccc',
@@ -74,6 +88,8 @@ export default class Mute implements CommandInterface {
                 mentionable: false,
             },
         });
+
+        return role;
     }
 
     isMuteTimeValid(muteTime: string) {

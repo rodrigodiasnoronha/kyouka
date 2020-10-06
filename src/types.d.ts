@@ -16,3 +16,13 @@ interface MuteDocument extends Document {
     mute_time: Date;
     muted_by_id: string; // arma
 }
+
+
+interface GuildModelInterface extends Document {
+    guild_name: string;
+    guild_id: string;
+    autorole_status: 'on' | 'off';
+    autorole_id?: string;
+    prefix: string;
+    memberCount?: number;
+}
