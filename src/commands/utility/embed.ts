@@ -1,6 +1,7 @@
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { CommandInterface } from '../../types';
 import { sendErrorMessage } from '../../utils/errorMessage';
+import { icons } from '../../utils/icons';
 
 interface JsonEmbed {
     title?: string;
@@ -91,7 +92,8 @@ export default class Embed implements CommandInterface {
 
         const messageEmbed = new MessageEmbed()
             .setTitle('Embed - Ajuda')
-            .setDescription(description);
+            .setDescription(description)
+            .setThumbnail(icons.questionIcon);
         return message.channel.send(messageEmbed);
     }
 }
