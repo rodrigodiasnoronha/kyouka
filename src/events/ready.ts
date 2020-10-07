@@ -1,5 +1,6 @@
 import { Client, Collection } from 'discord.js';
 import { Guild } from '../database/entities/Guild';
+import colors from 'colors';
 
 export const ready = async (
     client: Client,
@@ -11,5 +12,5 @@ export const ready = async (
         prefixCollection.set(guild.guild_id, guild.prefix);
     });
 
-    console.log('BOT is ALIVE!');
+    console.log(colors.rainbow('BOT IS ALIVE!'));
 };

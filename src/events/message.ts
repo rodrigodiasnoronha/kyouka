@@ -12,6 +12,8 @@ import { Unmute } from '../commands/moderation/unmute';
 import Embed from '../commands/utility/embed';
 import Autorole from '../commands/utility/autorole';
 import { Prefix } from '../commands/moderation/prefix';
+import SayCommand from '../commands/utility/say';
+import EightBall from '../commands/utility/8ball';
 
 // commands instance
 const ban = new Ban();
@@ -23,6 +25,8 @@ const clear = new Clear();
 const embed = new Embed();
 const autorole = new Autorole();
 const prefixCommand = new Prefix();
+const sayCommand = new SayCommand();
+const eightBallCommand = new EightBall();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -85,5 +89,16 @@ export const message = async (
         return autorole.run(message.client, message, args);
 
     if (prefixCommand.aliases.includes(command))
-        return prefixCommand.run(message.client, message, args, prefixCollection);
+        return prefixCommand.run(
+            message.client,
+            message,
+            args,
+            prefixCollection
+        );
+
+    if (sayCommand.aliases.includes(command))
+        return sayCommand.run(message.client, message, args);
+
+    if (eightBallCommand.aliases.includes(command))
+        return eightBallCommand.run(message.client, message, args);
 };

@@ -20,14 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/events/ready.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/utility/8ball.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/utility/say.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/events/guildCreate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/presences.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/ready.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/ready.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/errorReplies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/errorReplies.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,8 @@
       <workItem from="1601858740611" duration="6907000" />
       <workItem from="1602019018426" duration="2638000" />
       <workItem from="1602021806137" duration="182000" />
-      <workItem from="1602022321834" duration="2473000" />
+      <workItem from="1602022321834" duration="2739000" />
+      <workItem from="1602088752654" duration="2762000" />
     </task>
     <servers />
   </component>
@@ -169,10 +172,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601864070874" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602024457652">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602088990423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602024457652" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602088990423" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
