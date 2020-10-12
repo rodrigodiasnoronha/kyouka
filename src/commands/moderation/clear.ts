@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export default class Clear implements CommandInterface {
@@ -24,10 +24,11 @@ export default class Clear implements CommandInterface {
             limit: parseInt(value),
         });
 
-        message.channel.bulkDelete(msgs);
+        await message.channel.bulkDelete(msgs);
 
-        return message.channel.send(`
-            :white_check_mark: ${parseInt(value)} foram apagadas.
-        `);
+        return sendSucessMessage(
+            `${parseInt(value)} mensagens foram apagadas`,
+            message
+        );
     }
 }

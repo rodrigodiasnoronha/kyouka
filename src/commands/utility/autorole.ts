@@ -1,6 +1,6 @@
 import { CommandInterface, GuildModelInterface } from '../../types';
 import { Client, Message, MessageEmbed } from 'discord.js';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
 import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';
@@ -35,17 +35,19 @@ export default class Autorole implements CommandInterface {
 
             if (args[0] === 'on' || args[0] === 'off') {
                 await this.changeAutoroleStatus(args[0] === 'on', guild);
-                return message.channel.send(
+                return sendSucessMessage(
                     `O autorole foi ${
                         args[0] === 'on' ? 'ativado' : 'desativado'
-                    } neste servidor.`
+                    } neste servidor.`,
+                    message
                 );
             }
 
             if (args[0] === 'view') {
                 if (guild.autorole_status !== 'on') {
-                    return message.channel.send(
-                        'O Autorole neste servidor está desativado.'
+                    return sendSucessMessage(
+                        'O Autorole neste servidor está desativado.',
+                        message
                     );
                 }
 
@@ -53,12 +55,14 @@ export default class Autorole implements CommandInterface {
                     const role = message.guild?.roles.cache.get(
                         guild.autorole_id
                     );
-                    return message.channel.send(
-                        `O cargo de autorole definido previamente: \`${role?.name}\``
+                    return sendSucessMessage(
+                        `O cargo de autorole definido previamente: \`${role?.name}\``,
+                        message
                     );
                 } else {
-                    return message.channel.send(
-                        `Não há nenhum cargo de autorole definido neste servidor.`
+                    return sendSucessMessage(
+                        `Não há nenhum cargo de autorole definido neste servidor.`,
+                        message
                     );
                 }
             }
@@ -71,9 +75,10 @@ export default class Autorole implements CommandInterface {
 
             await guild.save();
 
-            return message.channel.send(`
-                :white_check_mark: Cargo de autorole definido com sucesso.
-            `);
+            return sendSucessMessage(
+                'Cargo de autorole definido com sucesso.',
+                message
+            );
         } catch (err) {
             return this.helper(message);
         }

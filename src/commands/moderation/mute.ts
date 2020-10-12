@@ -1,6 +1,6 @@
 import { Client, Guild, Message, Role } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
 // @ts-ignore
 import ms from 'ms';
@@ -70,10 +70,11 @@ export default class Mute implements CommandInterface {
         });
 
         message.guild?.member(user)?.roles.add(muteRole!.id);
-        message.channel.send(
-            `:white_check_mark: ${user.username} baka! Você foi mutado!`
-        );
 
+        sendSucessMessage(
+            `O ${user.username} foi mutado, aquele baka!`,
+            message
+        );
         setTimeout(() => {
             message.guild?.member(user)?.roles.remove(muteRole!.id);
         }, timeInMilliseconds);

@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export default class Ban implements CommandInterface {
@@ -35,8 +35,9 @@ export default class Ban implements CommandInterface {
         try {
             await message.guild?.member(user)?.ban({ reason: banReason });
 
-            return message.channel.send(
-                ':white_check_mark: Usuário banido. Baka, ninguém mandou quebrar as regras!'
+            return sendSucessMessage(
+                'Usuário banido. Baka! Ninguém mandou quebrar as regras',
+                message
             );
         } catch (err) {
             return sendErrorMessage(errorReplies.executingCommand, message);

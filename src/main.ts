@@ -16,9 +16,12 @@ const prefixCollection = new Collection<string, string>();
 
 client.on('ready', async () => {
     await ready(client, prefixCollection);
+
+    const presence = presences[Math.floor(Math.random() * presences.length)];
+    client.user?.setPresence(presence);
     setInterval(() => {
         const presence =
-             presences[Math.floor(Math.random() * presences.length)];
+            presences[Math.floor(Math.random() * presences.length)];
         client.user?.setPresence(presence);
     }, 1000 * 60 * 60 * 20);
 });

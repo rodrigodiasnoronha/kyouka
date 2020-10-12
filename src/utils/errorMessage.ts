@@ -4,9 +4,16 @@ export const sendErrorMessage = (
     error: { errorMessage: string },
     message: Message
 ) => {
-    const errorEmoji = message.client.emojis.cache.find(
-        (emoji) => emoji.name === 'error'
-    );
+    const messageEmbed = new MessageEmbed()
+        .setDescription(`<@${message.author}> ${error.errorMessage}`)
+        .setColor('#f44336');
+    return message.channel.send(messageEmbed);
+};
 
-    return message.channel.send(`<:error:${errorEmoji}> ${error.errorMessage}`);
+export const sendSucessMessage = (sucessMessage: string, message: Message) => {
+    const messageEmbed = new MessageEmbed()
+        .setDescription(`<@${message.author}> ${sucessMessage}`)
+        .setColor('#00e676');
+
+    return message.channel.send(messageEmbed);
 };

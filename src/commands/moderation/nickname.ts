@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export default class Nickname implements CommandInterface {
@@ -36,9 +36,7 @@ export default class Nickname implements CommandInterface {
 
             member?.setNickname(newNickname);
 
-            return message.channel.send(`
-                :white_check_mark: Nickname mudado com sucesso.\nPrazer, ${oldNickname}! Também conhecido como ${newNickname}!
-            `);
+            return sendSucessMessage(`Nickname mudado com sucesso.`, message);
         } catch (err) {
             return sendErrorMessage(errorReplies.executingCommand, message);
         }

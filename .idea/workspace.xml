@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,9 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/icons.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/embed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/embed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/ban.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/ban.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/clear.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/clear.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/kick.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/kick.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/mute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/mute.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/nickname.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/nickname.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/unmute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/unmute.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/autorole.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/autorole.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/errorMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/errorMessage.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +78,7 @@
     <property name="ts.external.directory.path" value="C:\Users\Minotauro\workspace\kyouka\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="npm.test">
+  <component name="RunManager" selected="npm.dev:start">
     <configuration name="dev:start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -90,8 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.test" />
         <item itemvalue="npm.dev:start" />
+        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -110,6 +121,9 @@
       <workItem from="1602021806137" duration="182000" />
       <workItem from="1602022321834" duration="2739000" />
       <workItem from="1602088752654" duration="4352000" />
+      <workItem from="1602110406361" duration="1020000" />
+      <workItem from="1602528094396" duration="654000" />
+      <workItem from="1602529046403" duration="2261000" />
     </task>
     <servers />
   </component>
@@ -133,22 +147,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601860177063" />
-    <state width="1345" height="114" key="GridCell.Tab.0.bottom" timestamp="1601860609478">
+    <state width="1345" height="112" key="GridCell.Tab.0.bottom" timestamp="1602530774977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="114" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601860609478" />
-    <state width="1345" height="114" key="GridCell.Tab.0.center" timestamp="1601860609478">
+    <state width="1345" height="112" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602530774977" />
+    <state width="1345" height="112" key="GridCell.Tab.0.center" timestamp="1602530774976">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="114" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601860609478" />
-    <state width="1345" height="114" key="GridCell.Tab.0.left" timestamp="1601860609477">
+    <state width="1345" height="112" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
+    <state width="1345" height="112" key="GridCell.Tab.0.left" timestamp="1602530774976">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="114" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601860609477" />
-    <state width="1345" height="114" key="GridCell.Tab.0.right" timestamp="1601860609478">
+    <state width="1345" height="112" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
+    <state width="1345" height="112" key="GridCell.Tab.0.right" timestamp="1602530774976">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="114" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601860609478" />
+    <state width="1345" height="112" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
     <state x="294" y="20" width="998" height="708" key="SettingsEditor" timestamp="1602022012176">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -165,18 +179,24 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601864070874" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602088990423">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602530719632">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602088990423" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602530719632" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/commands/utility/autorole.ts</url>
-          <line>105</line>
+          <line>109</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/commands/moderation/mute.ts</url>
+          <line>95</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

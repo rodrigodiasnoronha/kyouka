@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export class Unmute implements CommandInterface {
@@ -39,9 +39,7 @@ export class Unmute implements CommandInterface {
             // remove o mute do usuário
             message.guild?.member(user)?.roles.remove(muteRole);
 
-            return message.channel.send(`
-                :white_check_mark: ${user.username} foi desmutado.
-            `);
+            return sendSucessMessage('Usuário desmutado', message);
         } catch (err) {
             return sendErrorMessage(errorReplies.executingCommand, message);
         }
