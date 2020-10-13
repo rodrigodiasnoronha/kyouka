@@ -14,6 +14,8 @@ import Autorole from '../commands/utility/autorole';
 import { Prefix } from '../commands/moderation/prefix';
 import SayCommand from '../commands/utility/say';
 import EightBall from '../commands/utility/8ball';
+import CryCommand from '../commands/funny/cry';
+import { HelpCommand } from '../commands/utility/help';
 
 // commands instance
 const ban = new Ban();
@@ -27,6 +29,8 @@ const autorole = new Autorole();
 const prefixCommand = new Prefix();
 const sayCommand = new SayCommand();
 const eightBallCommand = new EightBall();
+const cryCommand = new CryCommand();
+const helpCommand = new HelpCommand();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -101,4 +105,10 @@ export const message = async (
 
     if (eightBallCommand.aliases.includes(command))
         return eightBallCommand.run(message.client, message, args);
+
+    if (cryCommand.aliases.includes(command))
+        return cryCommand.run(message.client, message, args);
+
+    if (helpCommand.aliases.includes(command))
+        return helpCommand.run(message.client, message, args);
 };

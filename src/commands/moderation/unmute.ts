@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage, sendSucessMessage } from '../../utils/errorMessage';
+import { sendErrorMessage, sendSucessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export class Unmute implements CommandInterface {

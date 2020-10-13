@@ -1,6 +1,6 @@
 import { CommandInterface } from '../../types';
 import { Client, Collection, Message } from 'discord.js';
-import {sendErrorMessage, sendSucessMessage} from '../../utils/errorMessage';
+import {sendErrorMessage, sendSucessMessage} from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';

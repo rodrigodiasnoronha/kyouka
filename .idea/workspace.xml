@@ -23,7 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/utility/help.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/images.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/ban.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/ban.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/clear.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/clear.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/kick.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/kick.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/mute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/mute.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/nickname.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/nickname.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/unmute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/unmute.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/8ball.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/8ball.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/autorole.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/autorole.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/embed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/embed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/say.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/say.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/errorMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendMessage.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +128,8 @@
       <workItem from="1602088752654" duration="4352000" />
       <workItem from="1602110406361" duration="1020000" />
       <workItem from="1602528094396" duration="654000" />
-      <workItem from="1602529046403" duration="2562000" />
+      <workItem from="1602529046403" duration="3753000" />
+      <workItem from="1602544170615" duration="3311000" />
     </task>
     <servers />
   </component>

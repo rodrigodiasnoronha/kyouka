@@ -1,6 +1,6 @@
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage } from '../../utils/sendMessage';
 import { icons } from '../../utils/icons';
 
 interface JsonEmbed {

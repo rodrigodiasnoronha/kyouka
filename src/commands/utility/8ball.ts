@@ -1,6 +1,6 @@
 import { CommandInterface } from '../../types';
 import { Client, Message } from 'discord.js';
-import { sendErrorMessage } from '../../utils/errorMessage';
+import { sendErrorMessage } from '../../utils/sendMessage';
 
 export default class EightBall implements CommandInterface {
     public title = '8Ball';
