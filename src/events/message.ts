@@ -1,21 +1,22 @@
 import { Collection, Message } from 'discord.js';
-
-const prefix = process.env.BOT_PREFIX || '.';
-
 // moderation commands
 import Ban from '../commands/moderation/ban';
 import Clear from '../commands/moderation/clear';
 import Kick from '../commands/moderation/kick';
 import Mute from '../commands/moderation/mute';
 import Nickname from '../commands/moderation/nickname';
-import { Unmute } from '../commands/moderation/unmute';
+import Unmute from '../commands/moderation/unmute';
 import Embed from '../commands/utility/embed';
 import Autorole from '../commands/utility/autorole';
-import { Prefix } from '../commands/moderation/prefix';
+import Prefix from '../commands/moderation/prefix';
 import SayCommand from '../commands/utility/say';
 import EightBall from '../commands/utility/8ball';
 import CryCommand from '../commands/funny/cry';
-import { HelpCommand } from '../commands/utility/help';
+import HelpCommand from '../commands/utility/help';
+import Thinking from '../commands/funny/thinking';
+import Jankenpon from '../commands/utility/jankenpon';
+
+const prefix = process.env.BOT_PREFIX || '.';
 
 // commands instance
 const ban = new Ban();
@@ -31,6 +32,8 @@ const sayCommand = new SayCommand();
 const eightBallCommand = new EightBall();
 const cryCommand = new CryCommand();
 const helpCommand = new HelpCommand();
+const thinkingCommand = new Thinking();
+const jankenponCommand = new Jankenpon();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -111,4 +114,10 @@ export const message = async (
 
     if (helpCommand.aliases.includes(command))
         return helpCommand.run(message.client, message, args);
+
+    if (thinkingCommand.aliases.includes(command))
+        return thinkingCommand.run(message.client, message, args);
+
+    if (jankenponCommand.aliases.includes(command))
+        return jankenponCommand.run(message.client, message, args);
 };

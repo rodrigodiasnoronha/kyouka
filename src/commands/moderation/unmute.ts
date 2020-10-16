@@ -1,9 +1,9 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage, sendSucessMessage } from '../../utils/sendMessage';
+import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
-export class Unmute implements CommandInterface {
+export default class Unmute implements CommandInterface {
     public title = 'Unmute';
     public description = 'Retirar o mute de algum usuário';
     public aliases = ['unmute', 'desmutar'];
@@ -39,7 +39,7 @@ export class Unmute implements CommandInterface {
             // remove o mute do usuário
             message.guild?.member(user)?.roles.remove(muteRole);
 
-            return sendSucessMessage('Usuário desmutado', message);
+            return sendSuccessMessage('Usuário desmutado', message);
         } catch (err) {
             return sendErrorMessage(errorReplies.executingCommand, message);
         }

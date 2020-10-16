@@ -1,6 +1,6 @@
 import { CommandInterface, GuildModelInterface } from '../../types';
 import { Client, Message, MessageEmbed } from 'discord.js';
-import { sendErrorMessage, sendSucessMessage } from '../../utils/sendMessage';
+import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';
@@ -35,7 +35,7 @@ export default class Autorole implements CommandInterface {
 
             if (args[0] === 'on' || args[0] === 'off') {
                 await this.changeAutoroleStatus(args[0] === 'on', guild);
-                return sendSucessMessage(
+                return sendSuccessMessage(
                     `O autorole foi ${
                         args[0] === 'on' ? 'ativado' : 'desativado'
                     } neste servidor.`,
@@ -45,7 +45,7 @@ export default class Autorole implements CommandInterface {
 
             if (args[0] === 'view') {
                 if (guild.autorole_status !== 'on') {
-                    return sendSucessMessage(
+                    return sendSuccessMessage(
                         'O Autorole neste servidor está desativado.',
                         message
                     );
@@ -55,12 +55,12 @@ export default class Autorole implements CommandInterface {
                     const role = message.guild?.roles.cache.get(
                         guild.autorole_id
                     );
-                    return sendSucessMessage(
+                    return sendSuccessMessage(
                         `O cargo de autorole definido previamente: \`${role?.name}\``,
                         message
                     );
                 } else {
-                    return sendSucessMessage(
+                    return sendSuccessMessage(
                         `Não há nenhum cargo de autorole definido neste servidor.`,
                         message
                     );
@@ -75,7 +75,7 @@ export default class Autorole implements CommandInterface {
 
             await guild.save();
 
-            return sendSucessMessage(
+            return sendSuccessMessage(
                 'Cargo de autorole definido com sucesso.',
                 message
             );

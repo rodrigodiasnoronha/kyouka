@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage, sendSucessMessage } from '../../utils/sendMessage';
+import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export default class Clear implements CommandInterface {
@@ -26,7 +26,7 @@ export default class Clear implements CommandInterface {
 
         await message.channel.bulkDelete(msgs);
 
-        return sendSucessMessage(
+        return sendSuccessMessage(
             `${parseInt(value)} mensagens foram apagadas`,
             message
         );

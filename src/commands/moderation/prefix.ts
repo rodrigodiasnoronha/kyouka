@@ -1,11 +1,11 @@
 import { CommandInterface } from '../../types';
 import { Client, Collection, Message } from 'discord.js';
-import {sendErrorMessage, sendSucessMessage} from '../../utils/sendMessage';
+import {sendErrorMessage, sendSuccessMessage} from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';
 
-export class Prefix implements CommandInterface {
+export default class Prefix implements CommandInterface {
     public title = 'Prefix';
     public description = 'Mude o meu prefixo no seu servidor!';
     public aliases = ['prefix', 'prefixo'];
@@ -46,7 +46,7 @@ export class Prefix implements CommandInterface {
         await guild.save();
 
         prefixCollection.set(message.guild!.id, newPrefix);
-        return sendSucessMessage(
+        return sendSuccessMessage(
             `Prefixo do servidor alterado com sucesso para \`${newPrefix}\``, message
         )
     }

@@ -1,6 +1,6 @@
 import { Client, Message } from 'discord.js';
 import { CommandInterface } from '../../types';
-import { sendErrorMessage, sendSucessMessage } from '../../utils/sendMessage';
+import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 
 export default class Kick implements CommandInterface {
@@ -35,7 +35,7 @@ export default class Kick implements CommandInterface {
         try {
             await member.kick();
 
-            return sendSucessMessage(
+            return sendSuccessMessage(
                 `${user.username} baka! Você foi expulso deste servidor!`,
                 message
             );
