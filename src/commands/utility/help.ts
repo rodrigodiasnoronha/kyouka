@@ -22,7 +22,7 @@ export default class HelpCommand implements CommandInterface {
         'prefix',
         'unmute',
     ];
-    private funnyCommands = ['chorar', 'pensando', 'jankenpon'];
+    private funnyCommands = ['chorar', 'pensando', 'jankenpon', 'sad'];
     private utilityCommands = ['8ball', 'autorole', 'embed', 'help', 'say'];
 
     public async run(client: Client, message: Message, args: string[]) {

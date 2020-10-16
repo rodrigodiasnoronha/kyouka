@@ -23,22 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/funny/thinking.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/utility/jankenpon.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/timeOutAsync.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/funny/sad.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/ban.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/ban.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/clear.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/clear.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/kick.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/kick.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/mute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/mute.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/nickname.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/nickname.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/unmute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/unmute.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/autorole.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/autorole.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/help.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/help.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/images.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/images.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sendMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendMessage.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +118,7 @@
       <workItem from="1602528094396" duration="654000" />
       <workItem from="1602529046403" duration="3753000" />
       <workItem from="1602544170615" duration="3631000" />
-      <workItem from="1602807347588" duration="7179000" />
+      <workItem from="1602807347588" duration="8525000" />
     </task>
     <servers />
   </component>

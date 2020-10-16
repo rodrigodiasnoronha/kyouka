@@ -15,6 +15,7 @@ import CryCommand from '../commands/funny/cry';
 import HelpCommand from '../commands/utility/help';
 import Thinking from '../commands/funny/thinking';
 import Jankenpon from '../commands/utility/jankenpon';
+import Sad from '../commands/funny/sad';
 
 const prefix = process.env.BOT_PREFIX || '.';
 
@@ -34,6 +35,7 @@ const cryCommand = new CryCommand();
 const helpCommand = new HelpCommand();
 const thinkingCommand = new Thinking();
 const jankenponCommand = new Jankenpon();
+const sadCommand = new Sad();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -120,4 +122,7 @@ export const message = async (
 
     if (jankenponCommand.aliases.includes(command))
         return jankenponCommand.run(message.client, message, args);
+
+    if (sadCommand.aliases.includes(command))
+        return sadCommand.run(message.client, message, args);
 };
