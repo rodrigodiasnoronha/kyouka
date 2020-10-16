@@ -16,6 +16,7 @@ import HelpCommand from '../commands/utility/help';
 import Thinking from '../commands/funny/thinking';
 import Jankenpon from '../commands/utility/jankenpon';
 import Sad from '../commands/funny/sad';
+import Attack from '../commands/funny/attack';
 
 const prefix = process.env.BOT_PREFIX || '.';
 
@@ -36,6 +37,7 @@ const helpCommand = new HelpCommand();
 const thinkingCommand = new Thinking();
 const jankenponCommand = new Jankenpon();
 const sadCommand = new Sad();
+const attackCommand = new Attack();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -125,4 +127,7 @@ export const message = async (
 
     if (sadCommand.aliases.includes(command))
         return sadCommand.run(message.client, message, args);
+
+    if (attackCommand.aliases.includes(command))
+        return attackCommand.run(message.client, message, args);
 };
