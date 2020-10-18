@@ -23,91 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/config/Welcome.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/ban.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/ban.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/ban.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/clear.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/clear.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/clear.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/kick.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/kick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/kick.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/mute.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/mute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/mute.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/nickname.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/nickname.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/nickname.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/prefix.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/prefix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/prefix.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/unmute.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/unmute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/moderation/unmute.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/8ball.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/8ball.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/8ball.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/autorole.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/autorole.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/autorole.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/embed.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/embed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/embed.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/say.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/say.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/commands/utility/say.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/entities/Guild.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/entities/Guild.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/entities/Guild.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/entities/Mute.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/entities/Mute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/entities/Mute.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/database/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/guildCreate.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/guildCreate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/guildCreate.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/guildMemberAdd.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/guildMemberAdd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/guildMemberAdd.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/message.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/message.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/message.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/ready.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/ready.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/events/ready.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/functions/createGuild.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/functions/createGuild.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/functions/createGuild.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/errorMessage.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/errorMessage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/errorMessage.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/errorReplies.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/errorReplies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/errorReplies.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/icons.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/icons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/icons.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/presences.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/presences.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/utils/presences.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/entities/Guild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/entities/Guild.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/guildMemberAdd.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/guildMemberAdd.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/ready.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/ready.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/createGuild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/createGuild.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/images.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/images.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +66,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -205,6 +121,7 @@
       <workItem from="1602960178243" duration="2433000" />
       <workItem from="1602964665274" duration="2191000" />
       <workItem from="1602969474229" duration="16106000" />
+      <workItem from="1602998104409" duration="282000" />
     </task>
     <servers />
   </component>
@@ -252,11 +169,12 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="112" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
-    <state x="229" y="6" width="998" height="730" key="SettingsEditor" timestamp="1602983334351">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state x="229" y="6" width="998" height="730" key="SettingsEditor" timestamp="1602998362974">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state x="294" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602022012176" />
     <state x="229" y="6" width="998" height="730" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1602983334351" />
+    <state x="229" y="6" key="SettingsEditor/0.0.1366.741@0.0.1366.741" timestamp="1602998362974" />
     <state width="498" height="451" key="SwitcherDM" timestamp="1602984180703">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
@@ -288,7 +206,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/commands/config/Welcome.ts</url>
           <line>7</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
