@@ -37,4 +37,12 @@ interface GuildModelInterface extends Document {
     autorole_id?: string;
     prefix: string;
     memberCount?: number;
+    welcome_status: 'on' | 'off';
+    welcome_title: string;
+    welcome_subtitle: string;
+    welcome_footer: string;
+    welcome_image?: string;
+    welcome_channel?: string;
+    welcome_thumbnail?: string;
+
 }

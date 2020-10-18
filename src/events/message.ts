@@ -17,6 +17,8 @@ import Thinking from '../commands/funny/thinking';
 import Jankenpon from '../commands/utility/jankenpon';
 import Sad from '../commands/funny/sad';
 import Attack from '../commands/funny/attack';
+import Level from '../commands/leveling/level';
+import Welcome from "../commands/config/Welcome";
 
 const prefix = process.env.BOT_PREFIX || '.';
 
@@ -38,6 +40,8 @@ const thinkingCommand = new Thinking();
 const jankenponCommand = new Jankenpon();
 const sadCommand = new Sad();
 const attackCommand = new Attack();
+const levelCommand = new Level();
+const welcomeCommand = new Welcome();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -130,4 +134,11 @@ export const message = async (
 
     if (attackCommand.aliases.includes(command))
         return attackCommand.run(message.client, message, args);
+
+    if (levelCommand.aliases.includes(command)) 
+        return levelCommand.run(message.client, message, args);
+
+    if (welcomeCommand.aliases.includes(command))
+        return welcomeCommand.run(message.client, message, args);
+
 };

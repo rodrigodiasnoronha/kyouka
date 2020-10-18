@@ -43,4 +43,8 @@ export const images = {
         'https://i.pinimg.com/originals/8e/44/c4/8e44c484dde7ed6582222c9c7c779e23.gif',
         'https://i.pinimg.com/originals/66/50/ee/6650ee321d733117d8832e3bab4135a0.gif',
     ],
+    discordDefaultProfileImage:
+        'https://cdn.discordapp.com/embed/avatars/0.png',
+    kyoukaThumbnail:
+        'https://media.discordapp.net/attachments/762760319927844944/767203507983220736/Captura_de_tela_de_2020-10-17_22-52-38.png',
 };

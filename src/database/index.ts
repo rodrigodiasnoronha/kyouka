@@ -8,5 +8,5 @@ export const databaseConnect = async () => {
         { useUnifiedTopology: true, useNewUrlParser: true }
     )
         .then(() => {})
-        .catch(() => {});
+        .catch((err) => console.log(`erro ao conectar ao banco de dados: ${err}`));
 };

@@ -12,5 +12,5 @@ export const ready = async (
         prefixCollection.set(guild.guild_id, guild.prefix);
     });
 
-    console.log(colors.rainbow('BOT IS ALIVE!'));
+    console.log(colors.green('BOT IS ALIVE!'));
 };
