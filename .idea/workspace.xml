@@ -24,6 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/config/Welcome.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/config/Welcome.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/guildMemberAdd.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/guildMemberAdd.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +124,7 @@
       <workItem from="1602964665274" duration="2191000" />
       <workItem from="1602969474229" duration="16106000" />
       <workItem from="1602998104409" duration="282000" />
+      <workItem from="1603041474358" duration="1721000" />
     </task>
     <servers />
   </component>
@@ -141,6 +144,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="131" y="33" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603042317005">
+      <screen x="0" y="0" width="1366" height="741" />
+    </state>
+    <state x="131" y="33" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.741@0.0.1366.741" timestamp="1603042317005" />
     <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601860177063">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -149,10 +156,11 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="426" y="221" width="501" height="278" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.736@0.0.1366.736" timestamp="1602972226292" />
-    <state x="511" y="129" width="424" height="478" key="FileChooserDialogImpl" timestamp="1602983318646">
-      <screen x="0" y="0" width="1366" height="736" />
+    <state x="511" y="130" width="424" height="478" key="FileChooserDialogImpl" timestamp="1603042310326">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state x="511" y="129" width="424" height="478" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1602983318646" />
+    <state x="511" y="130" key="FileChooserDialogImpl/0.0.1366.741@0.0.1366.741" timestamp="1603042310326" />
     <state width="1345" height="112" key="GridCell.Tab.0.bottom" timestamp="1602530774977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -202,11 +210,6 @@
           <url>file://$PROJECT_DIR$/src/commands/utility/autorole.ts</url>
           <line>109</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/commands/config/Welcome.ts</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

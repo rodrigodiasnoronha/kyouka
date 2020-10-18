@@ -26,6 +26,10 @@ export const guildMemberAdd = async (
     if (guild.autorole_status === 'on' && guild.autorole_id) {
         await guildMember.roles.add(guild.autorole_id);
     }
+
+    if (guild.welcome_status === 'on' && guild.welcome_channel && guildMember.user) {
+        await sendWelcomeMessage(guildMember.client, guild, guildMember.user, guildMember.guild);
+    }
 };
 
 /**
@@ -42,20 +46,14 @@ export async function sendWelcomeMessage(
     user: User,
     guild: Guild
 ) {
-    if (guildModel.welcome_status !== 'on') {
-        return console.log('mensagem de boas vindas com status desativado');
-    }
+    if (guildModel.welcome_status !== 'on') return;
 
-    if (!guildModel.welcome_channel) {
-        return console.log('nenhuma canal de boas vindas definido');
-    }
+    if (!guildModel.welcome_channel) return;
 
     const welcomeChannel = client.channels.cache.get(
         guildModel.welcome_channel
     ) as TextChannel;
-    if (!welcomeChannel) {
-        return console.log('o canal de boas vindas não foi encontrado');
-    }
+    if (!welcomeChannel) return;
 
     // formatação title
     let title = guildModel.welcome_title.replace(/\$user/g, user.tag);

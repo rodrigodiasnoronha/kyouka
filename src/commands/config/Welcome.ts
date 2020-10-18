@@ -116,20 +116,23 @@ export default class Welcome implements CommandInterface {
 
         if (['footer', 'rodapé'].includes(args[0])) {
             const [, ...footerArray] = args;
-            if (!footerArray.length)
-                return sendErrorMessage(
-                    {
-                        errorMessage:
-                            'Você precisa digitar uma mensagem para o rodapé do embed!',
-                    },
-                    message
-                );
+            if (!footerArray.length) {
+                guild.welcome_footer = '';
+                await guild.save();
+                return sendSuccessMessage('Rodapé removido.', message);
+            }
             guild.welcome_footer = footerArray.join(' ');
             await guild.save();
             return sendSuccessMessage('Rodapé alterado com sucesso', message);
         }
 
         if (['thumbnail'].includes(args[0])) {
+            if (['remove', 'remover'].includes(args[1])) {
+                guild.welcome_thumbnail = '';
+                await guild.save();
+                return sendSuccessMessage('Thumbnail removida com sucesso.', message);
+            }
+
             const image = message.attachments.array()[0];
             if (!image)
                 return sendErrorMessage(
@@ -139,7 +142,6 @@ export default class Welcome implements CommandInterface {
                     },
                     message
                 );
-
             // @ts-ignore
             if (image!.height > 400 || image!.width > 400)
                 return sendErrorMessage(
@@ -159,7 +161,19 @@ export default class Welcome implements CommandInterface {
             );
         }
 
-        if (['image', 'imagem']) {
+        if (['image', 'imagem'].includes(args[0])) {
+            if (['remove', 'remover'].includes(args[1])) {
+                guild.welcome_image = '';
+                await guild.save();
+                return sendSuccessMessage('Imagem de boas vindas removida com sucesso', message);
+            }
+
+            const image = message.attachments.array()[0];
+            if (!image) return sendErrorMessage({errorMessage: 'Você precisa carregar uma imagem junto com a mensagem.'}, message);
+
+            guild.welcome_image = image.url;
+            await guild.save();
+            return sendSuccessMessage('Imagem carregada com sucesso.', message);
         }
 
         const welcomeStatus =
@@ -221,13 +235,13 @@ export default class Welcome implements CommandInterface {
                 Define o canal de mensagens de boas vindas.
                 
                 \`${prefix}welcome image <imagem_fixa_na_mensagem>\`
-                Define a imagem de boas vindas da mensagem.
+                Define a imagem de boas vindas da mensagem. Também é possível usar o argumento 'remove' para remover a imagem de boas vindas.
                 
                 \`${prefix}welcome footer <mensagem>\`
-                Define o rodapé da mensagem de boas vindas.
+                Define o rodapé da mensagem de boas vindas. Se você não passar uma mensagem, o rodapé será removido.
                 
                 \`${prefix}welcome thumbnail <imagem_fixa_na_mensagem>\`
-                Define a thumbnail (aquela imagem pequena no Embed) da mensagem.
+                Define a thumbnail (aquela imagem pequena no Embed) da mensagem. Também é possível usar o argumento 'remove' para remover a thumbnail.
                 
                 \`${prefix}welcome thumbnail <imagem_fixa_na_mensagem>\`
                 Define a thumbnail (aquela imagem pequena no Embed) da mensagem.
