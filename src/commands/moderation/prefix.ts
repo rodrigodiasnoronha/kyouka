@@ -1,6 +1,6 @@
 import { CommandInterface } from '../../types';
 import { Client, Collection, Message } from 'discord.js';
-import {sendErrorMessage, sendSuccessMessage} from '../../utils/sendMessage';
+import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
 import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';
@@ -47,7 +47,8 @@ export default class Prefix implements CommandInterface {
 
         prefixCollection.set(message.guild!.id, newPrefix);
         return sendSuccessMessage(
-            `Prefixo do servidor alterado com sucesso para \`${newPrefix}\``, message
-        )
+            `Prefixo do servidor alterado com sucesso para \`${newPrefix}\``,
+            message
+        );
     }
 }

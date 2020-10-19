@@ -21,9 +21,17 @@ export default class HelpCommand implements CommandInterface {
         'nickname',
         'prefix',
         'unmute',
+        'welcome',
     ];
     private funnyCommands = ['chorar', 'pensando', 'jankenpon', 'sad'];
-    private utilityCommands = ['8ball', 'autorole', 'embed', 'help', 'say'];
+    private utilityCommands = [
+        '8ball',
+        'autorole',
+        'embed',
+        'help',
+        'say',
+        'changelog',
+    ];
 
     public async run(client: Client, message: Message, args: string[]) {
         const embed = new MessageEmbed()

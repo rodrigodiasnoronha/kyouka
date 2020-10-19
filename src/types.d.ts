@@ -44,5 +44,4 @@ interface GuildModelInterface extends Document {
     welcome_image?: string;
     welcome_channel?: string;
     welcome_thumbnail?: string;
-
 }

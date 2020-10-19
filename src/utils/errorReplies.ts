@@ -34,6 +34,6 @@ export const errorReplies = {
         errorMessage: 'Esse usuário não esta mutado.',
     },
     newPrefixError: {
-        errorMessage: 'Você precisa digitar o novo prefixo do servidor.'
-    }
+        errorMessage: 'Você precisa digitar o novo prefixo do servidor.',
+    },
 };

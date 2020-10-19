@@ -23,9 +23,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/commands/config/Leave.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/utility/changelog.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/config/Welcome.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/config/Welcome.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/leveling/level.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/leveling/level.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/prefix.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/help.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/help.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/entities/Guild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/entities/Guild.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/events/guildMemberAdd.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/guildMemberAdd.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/errorReplies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/errorReplies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/icons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/icons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/presences.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/presences.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/sendMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/timeOutAsync.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/timeOutAsync.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +85,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="node" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -124,7 +145,7 @@
       <workItem from="1602964665274" duration="2191000" />
       <workItem from="1602969474229" duration="16106000" />
       <workItem from="1602998104409" duration="282000" />
-      <workItem from="1603041474358" duration="1721000" />
+      <workItem from="1603041474358" duration="6105000" />
     </task>
     <servers />
   </component>
@@ -156,11 +177,11 @@
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="426" y="221" width="501" height="278" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.736@0.0.1366.736" timestamp="1602972226292" />
-    <state x="511" y="130" width="424" height="478" key="FileChooserDialogImpl" timestamp="1603042310326">
+    <state x="511" y="130" width="430" height="481" key="FileChooserDialogImpl" timestamp="1603046009840">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state x="511" y="129" width="424" height="478" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1602983318646" />
-    <state x="511" y="130" key="FileChooserDialogImpl/0.0.1366.741@0.0.1366.741" timestamp="1603042310326" />
+    <state x="511" y="130" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.741@0.0.1366.741" timestamp="1603046009840" />
     <state width="1345" height="112" key="GridCell.Tab.0.bottom" timestamp="1602530774977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -177,12 +198,12 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="112" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
-    <state x="229" y="6" width="998" height="730" key="SettingsEditor" timestamp="1602998362974">
+    <state x="229" y="9" width="992" height="727" key="SettingsEditor" timestamp="1603046105394">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state x="294" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602022012176" />
     <state x="229" y="6" width="998" height="730" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1602983334351" />
-    <state x="229" y="6" key="SettingsEditor/0.0.1366.741@0.0.1366.741" timestamp="1602998362974" />
+    <state x="229" y="9" width="992" height="727" key="SettingsEditor/0.0.1366.741@0.0.1366.741" timestamp="1603046105394" />
     <state width="498" height="451" key="SwitcherDM" timestamp="1602984180703">
       <screen x="0" y="0" width="1366" height="736" />
     </state>

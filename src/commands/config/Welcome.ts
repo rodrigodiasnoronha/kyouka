@@ -1,9 +1,10 @@
 import { CommandInterface } from '../../types';
-import { Client, Message, MessageEmbed } from 'discord.js';
+import { Client, EmbedFieldData, Message, MessageEmbed } from 'discord.js';
 import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';
 import { sendWelcomeMessage } from '../../events/guildMemberAdd';
 import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
+import prefix from '../moderation/prefix';
 
 export default class Welcome implements CommandInterface {
     public title = 'Welcome';
@@ -130,7 +131,10 @@ export default class Welcome implements CommandInterface {
             if (['remove', 'remover'].includes(args[1])) {
                 guild.welcome_thumbnail = '';
                 await guild.save();
-                return sendSuccessMessage('Thumbnail removida com sucesso.', message);
+                return sendSuccessMessage(
+                    'Thumbnail removida com sucesso.',
+                    message
+                );
             }
 
             const image = message.attachments.array()[0];
@@ -165,11 +169,21 @@ export default class Welcome implements CommandInterface {
             if (['remove', 'remover'].includes(args[1])) {
                 guild.welcome_image = '';
                 await guild.save();
-                return sendSuccessMessage('Imagem de boas vindas removida com sucesso', message);
+                return sendSuccessMessage(
+                    'Imagem de boas vindas removida com sucesso',
+                    message
+                );
             }
 
             const image = message.attachments.array()[0];
-            if (!image) return sendErrorMessage({errorMessage: 'Você precisa carregar uma imagem junto com a mensagem.'}, message);
+            if (!image)
+                return sendErrorMessage(
+                    {
+                        errorMessage:
+                            'Você precisa carregar uma imagem junto com a mensagem.',
+                    },
+                    message
+                );
 
             guild.welcome_image = image.url;
             await guild.save();
@@ -179,38 +193,23 @@ export default class Welcome implements CommandInterface {
         const welcomeStatus =
             guild.welcome_status === 'on' ? 'Ativado' : 'Desativado';
         const welcomeImage = guild.welcome_image ? 'Ativado' : 'Desativado';
+        const welcomeChannel = guild.welcome_channel ? `<#${guild.welcome_channel}>` : 'Não definido'
         const welcomeThumbnail = guild.welcome_thumbnail
             ? 'Ativado'
             : 'Desativado';
 
         const welcomeEmbed = new MessageEmbed().setTitle(
             'Mensagem de Boas Vindas'
-        ).setDescription(`
-                **Situação - Sistema de boas vindas**
-                ${welcomeStatus}
-            
-                **Título - Mensagem de boas vindas**
-                ${guild.welcome_title}
-                
-                **Mensagem de boas Vindas**
-                ${guild.welcome_subtitle}
-                
-                **Canal de boas vindas**
-                ${
-                    guild.welcome_channel
-                        ? `<#${guild.welcome_channel}>`
-                        : 'Não definido'
-                }
-                
-                **Imagem de boas vindas**
-                ${welcomeImage}
-                
-                **Thumbnail de boas vindas**
-                ${welcomeThumbnail}
-                
-                **Rodapé - Mensagem de boas vindas**
-                ${guild.welcome_footer}
-            `).setFooter(`
+        )
+        .addField('Status', welcomeStatus)
+        .addField('Título', guild.welcome_title)
+        .addField('Subtítulo', guild.welcome_subtitle)
+        .addField('Canal de boas vindas', welcomeChannel)
+        .addField('Imagem', welcomeImage)
+        .addField('Thumbnail', welcomeThumbnail)
+        .addField('Footer', guild.welcome_footer || 'Não definido')
+
+        .setFooter(`
                Digite \`${guild.prefix}welcome ajuda\` para ver como configurar a mensagem de boas vindas no seu servidor.
             `);
 
@@ -218,45 +217,52 @@ export default class Welcome implements CommandInterface {
     }
 
     help(message: Message, prefix: string) {
-        const helpEmbed = new MessageEmbed().setTitle(
-            'Ajuda - Mensagem Boas Vindas'
-        ).setDescription(`
-                **Comandos**
-                \`${prefix}welcome on/off\`
-                Ativar ou desativar o sistema de boas vindas.
-    
-                \`${prefix}welcome title <mensagem>\`
-                Define o título da mensagem de boas vindas.
-                
-                \`${prefix}welcome subtitle <mensagem>\`
-                Define o subtítulo da mensagem de boas vindas.
-                
-                \`${prefix}welcome channel <canal>\`
-                Define o canal de mensagens de boas vindas.
-                
-                \`${prefix}welcome image <imagem_fixa_na_mensagem>\`
-                Define a imagem de boas vindas da mensagem. Também é possível usar o argumento 'remove' para remover a imagem de boas vindas.
-                
-                \`${prefix}welcome footer <mensagem>\`
-                Define o rodapé da mensagem de boas vindas. Se você não passar uma mensagem, o rodapé será removido.
-                
-                \`${prefix}welcome thumbnail <imagem_fixa_na_mensagem>\`
-                Define a thumbnail (aquela imagem pequena no Embed) da mensagem. Também é possível usar o argumento 'remove' para remover a thumbnail.
-                
-                \`${prefix}welcome thumbnail <imagem_fixa_na_mensagem>\`
-                Define a thumbnail (aquela imagem pequena no Embed) da mensagem.
-                 
-                \`${prefix}welcome example\`
-                Envia uma mensagem de boas vindas como exemplo.
-                 
-                 **Variáveis**
-                 \`$user\` Usuário que entrou no servidor.
-                 \`$user_id\` ID do usuário.
-                 \`$member_count\` Total de membros no servidor.
-                 \`$username\` Username do usuário.
-                 \`$server_name\` Nome do servidor.
-                    
-            `);
+        const helpEmbed = new MessageEmbed()
+            .setTitle('Ajuda - Mensagem Boas Vindas')
+            .addField(
+                prefix + 'welcome on/off',
+                'Ativar/desativar sistema de boas vindas',
+                false
+            )
+            .addField(
+                prefix + 'title <mensagem>',
+                'Define título da mensagem de boas vindas',
+                false
+            )
+            .addField(
+                prefix + 'welcome subtitle <mensagem>',
+                'Define o subtítulo da mensagem de boas vindas',
+                false
+            )
+            .addField(
+                prefix + 'welcome channel <canal>',
+                'Define o canal de mensagens de boas vindas',
+                false
+            )
+            .addField(
+                prefix + 'welcome image',
+                'Define a imagem fixada na mensagem na mensagem de boas Vindas. É possível usar o argumento `remove` para remover a imagem da mensagem.',
+                false
+            )
+            .addField(
+                prefix + 'welcome footer <mensage>',
+                'Footer da mensagem de boas vindas. Se vocẽ não passar um argumento, o footer será removido',
+                false
+            )
+            .addField(
+                prefix + 'welcome thumbnail',
+                'Define a imagem fixada na mensagem como Thumbnail da mensagem de boas vindas. Use o argumento `remove` para remover a thumbnail.'
+            )
+            .addField(
+                prefix + 'welcome example',
+                'Envia uma mensagem de boas vindas',
+                false
+            )
+            .addField(
+                'Variáveis',
+                '`$user` Usuário\n`$user_id` ID do usuário\n`$member_count` Total de membros no servidor\n`$username` Nome de usuário\n`$server_name` Nome deste servidor',
+                false
+            );
 
         return message.channel.send(helpEmbed);
     }

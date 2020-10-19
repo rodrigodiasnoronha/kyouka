@@ -1,4 +1,4 @@
-import {  PresenceData } from 'discord.js';
+import { PresenceData } from 'discord.js';
 
 export const presences: PresenceData[] = [
     {

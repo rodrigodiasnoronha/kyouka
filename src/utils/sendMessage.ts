@@ -10,7 +10,10 @@ export const sendErrorMessage = (
     return message.channel.send(messageEmbed);
 };
 
-export const sendSuccessMessage = (successMessage: string, message: Message) => {
+export const sendSuccessMessage = (
+    successMessage: string,
+    message: Message
+) => {
     const messageEmbed = new MessageEmbed()
         .setDescription(successMessage)
         .setColor('#00e676');

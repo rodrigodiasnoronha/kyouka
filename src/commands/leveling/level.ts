@@ -1,17 +1,16 @@
-import {Client, Message, MessageAttachment} from "discord.js";
-import { CommandInterface } from "../../types";
+import { Client, Message, MessageAttachment } from 'discord.js';
+import { CommandInterface } from '../../types';
 // @ts-ignore
 import canvacord from 'canvacord';
-import {images} from "../../utils/images";
-
+import { images } from '../../utils/images';
 
 export default class Level implements CommandInterface {
     public title = 'Level';
     public description = 'Veja seu nível';
     public aliases = ['level', 'xp'];
     public args = '';
-    public async run(client: Client, message: Message, args:string[]) {
-        return message.channel.send("Este comando não existe.");
+    public async run(client: Client, message: Message, args: string[]) {
+        return message.channel.send('Este comando não existe.');
         // const userAvatar = message.author.avatarURL({
         //     format: "png"
         // }) || images.discordDefaultProfileImage;

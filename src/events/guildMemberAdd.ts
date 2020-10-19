@@ -27,8 +27,17 @@ export const guildMemberAdd = async (
         await guildMember.roles.add(guild.autorole_id);
     }
 
-    if (guild.welcome_status === 'on' && guild.welcome_channel && guildMember.user) {
-        await sendWelcomeMessage(guildMember.client, guild, guildMember.user, guildMember.guild);
+    if (
+        guild.welcome_status === 'on' &&
+        guild.welcome_channel &&
+        guildMember.user
+    ) {
+        await sendWelcomeMessage(
+            guildMember.client,
+            guild,
+            guildMember.user,
+            guildMember.guild
+        );
     }
 };
 

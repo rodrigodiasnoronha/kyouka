@@ -18,7 +18,10 @@ import Jankenpon from '../commands/utility/jankenpon';
 import Sad from '../commands/funny/sad';
 import Attack from '../commands/funny/attack';
 import Level from '../commands/leveling/level';
-import Welcome from "../commands/config/Welcome";
+import Welcome from '../commands/config/Welcome';
+import Changelog from '../commands/utility/changelog';
+import changelog from '../commands/utility/changelog';
+import { Leave } from '../commands/config/Leave';
 
 const prefix = process.env.BOT_PREFIX || '.';
 
@@ -42,6 +45,8 @@ const sadCommand = new Sad();
 const attackCommand = new Attack();
 const levelCommand = new Level();
 const welcomeCommand = new Welcome();
+const changelogCommand = new Changelog();
+const leaveCommand = new Leave();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -135,10 +140,15 @@ export const message = async (
     if (attackCommand.aliases.includes(command))
         return attackCommand.run(message.client, message, args);
 
-    if (levelCommand.aliases.includes(command)) 
+    if (levelCommand.aliases.includes(command))
         return levelCommand.run(message.client, message, args);
 
     if (welcomeCommand.aliases.includes(command))
         return welcomeCommand.run(message.client, message, args);
 
+    if (leaveCommand.aliases.includes(command))
+        return leaveCommand.run(message.client, message, args);
+
+    if (changelogCommand.aliases.includes(command))
+        return changelogCommand.run(message.client, message, args);
 };
