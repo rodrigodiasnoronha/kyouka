@@ -90,5 +90,5 @@ export async function sendWelcomeMessage(
     if (guildModel.welcome_image)
         welcomeEmbed.setImage(guildModel.welcome_image);
 
-    welcomeChannel.send(welcomeEmbed);
+    await welcomeChannel.send(welcomeEmbed);
 }

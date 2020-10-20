@@ -37,6 +37,8 @@ interface GuildModelInterface extends Document {
     autorole_id?: string;
     prefix: string;
     memberCount?: number;
+
+    // welcome properties
     welcome_status: 'on' | 'off';
     welcome_title: string;
     welcome_subtitle: string;
@@ -44,4 +46,13 @@ interface GuildModelInterface extends Document {
     welcome_image?: string;
     welcome_channel?: string;
     welcome_thumbnail?: string;
+
+    // leave properties
+    leave_status: 'on' | 'off';
+    leave_title: string;
+    leave_subtitle: string;
+    leave_footer: string;
+    leave_image?: string;
+    leave_channel?: string;
+    leave_thumbnail?: string;
 }

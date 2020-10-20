@@ -6,6 +6,7 @@ import { guildMemberAdd } from './events/guildMemberAdd';
 import { ready } from './events/ready';
 import { guildCreate } from './events/guildCreate';
 import { presences } from './utils/presences';
+import { guildMemberRemove } from './events/guildMemberRemove';
 
 const client = new Client();
 
@@ -30,6 +31,7 @@ client.on('error', console.error);
 client.on('warn', console.warn);
 client.on('guildCreate', guildCreate);
 client.on('guildMemberAdd', guildMemberAdd);
+client.on('guildMemberRemove', guildMemberRemove);
 client.on('message', async (messageSent) => {
     await message(messageSent, prefixCollection);
 });
