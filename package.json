@@ -2,12 +2,16 @@
     "name": "kyouka-bot",
     "version": "1.0.0",
     "description": "",
+<<<<<<< HEAD
     "main": "main.js",
+=======
+    "main": "build/main.js",
+>>>>>>> 9afa229f8cadc2bd5e3002e5878755d248245c1e
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev:start": "ts-node-dev --ignore-watch node_modules src/main.ts",
         "build": "tsc",
-        "start": "node build/main.js",
+        "start": "pm2 start",
         "prettier": "prettier --write ."
     },
     "keywords": [],
