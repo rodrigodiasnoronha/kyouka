@@ -2,6 +2,7 @@ import {CommandInterface} from "../../types";
 import {Client, Message, MessageAttachment} from "discord.js";
 import {createCanvas, loadImage,} from 'canvas'
 import {create} from "domain";
+import {images} from "../../utils/images";
 
 export default class Lgbt implements CommandInterface {
     public title = 'LGBT';
@@ -10,21 +11,22 @@ export default class Lgbt implements CommandInterface {
     public aliases = ['lgbt'];
 
     public async run(client: Client, message: Message, args: string[]) {
+        const user = message.mentions.users.first();
 
-        const profilePicURL = message.author.avatarURL({
+        let profilePicURL = user ?  user.avatarURL({
             format: 'png',
             size: 1024
-        }) || message.author.displayAvatarURL({
+        }) : message.author.avatarURL({
             format: 'png',
             size: 1024
-        })
+        });
 
         // criar canvas e seu contexto
         const canvas = createCanvas(1024, 1024,);
         const context = canvas.getContext('2d');
 
         // carregar imagem de perfil para o canvas
-        const canvasProfileImage = await loadImage(profilePicURL);
+        const canvasProfileImage = await loadImage(profilePicURL || images.discordDefaultProfileImage);
 
         // setar imagem de perfil no canvas
         context.drawImage(canvasProfileImage, 0, 0, canvas.width, canvas.height);
