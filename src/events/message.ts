@@ -22,6 +22,7 @@ import Welcome from '../commands/config/Welcome';
 import Changelog from '../commands/utility/changelog';
 import Leave from '../commands/config/Leave';
 import Log from '../commands/config/Log';
+import Lgbt from "../commands/utility/lgbt";
 
 // commands instance
 const ban = new Ban();
@@ -46,6 +47,7 @@ const welcomeCommand = new Welcome();
 const changelogCommand = new Changelog();
 const leaveCommand = new Leave();
 const logCommand = new Log();
+const lgbtCommand = new Lgbt();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -153,4 +155,8 @@ export const message = async (
 
     if (logCommand.aliases.includes(command))
         return logCommand.run(message.client, message, args);
+
+    if (lgbtCommand.aliases.includes(command))
+        return lgbtCommand.run(message.client, message, args);
+
 };
