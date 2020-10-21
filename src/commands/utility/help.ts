@@ -1,4 +1,7 @@
 import { CommandInterface } from '../../types';
+import { icons } from '../../utils/icons';
+import fs from 'fs';
+import path from 'path';
 import {
     Client,
     Message,
@@ -6,34 +9,13 @@ import {
     MessageReaction,
     User,
 } from 'discord.js';
-import { icons } from '../../utils/icons';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class HelpCommand implements CommandInterface {
     public title = 'Help';
-    public description = '';
+    public description = 'Meu painel de ajuda';
     public aliases = ['ajuda', 'help'];
     public args = '';
-    private moderationCommands = [
-        'ban',
-        'clear',
-        'kick',
-        'mute',
-        'nickname',
-        'prefix',
-        'unmute',
-        'welcome',
-        'leave',
-        'log',
-    ];
-    private funnyCommands = ['chorar', 'pensando', 'jankenpon', 'sad'];
-    private utilityCommands = [
-        '8ball',
-        'autorole',
-        'embed',
-        'help',
-        'say',
-        'changelog',
-    ];
 
     public async run(client: Client, message: Message, args: string[]) {
         const embed = new MessageEmbed()
@@ -47,6 +29,8 @@ export default class HelpCommand implements CommandInterface {
             :fire: **Diversão**
             
             :tools: **Utilidades**
+
+            :question: **Sobre mim**
         `
             )
             .setThumbnail(icons.questionIcon);
@@ -56,8 +40,9 @@ export default class HelpCommand implements CommandInterface {
         await messageSent.react('👮');
         await messageSent.react('🔥');
         await messageSent.react('🛠️');
+        await messageSent.react('❓');
 
-        const validsReactEmojis = ['👮', '🔥', '🛠️'];
+        const validsReactEmojis = ['👮', '🔥', '🛠️', '❓'];
         const reactionFilter = (reaction: MessageReaction, userReact: User) =>
             validsReactEmojis.includes(reaction.emoji.name) &&
             userReact.id === message.author.id;
@@ -79,6 +64,9 @@ export default class HelpCommand implements CommandInterface {
             } else if (reaction.emoji.name === '👮') {
                 const embed = this.showsModerationEmbed();
                 await messageSent.edit(embed);
+            } else if (reaction.emoji.name === '❓') {
+                const embed = this.showsQuestionEmbed();
+                await messageSent.edit(embed);
             }
         });
 
@@ -88,39 +76,102 @@ export default class HelpCommand implements CommandInterface {
     }
 
     showsModerationEmbed(): MessageEmbed {
-        let listModCommands = '';
-        this.moderationCommands.forEach((command) => {
-            listModCommands += `\`${command}\` `;
+        const moderationCommandFiles = fs
+            .readdirSync(path.resolve(__dirname, '..', 'moderation'))
+            .filter((file) => file.endsWith('.js') || file.endsWith('.ts'));
+
+        const moderationCommandList = new Array<CommandInterface>();
+
+        moderationCommandFiles.forEach((file) => {
+            const command = require(`../moderation/${file}`);
+            if (!file) return;
+            const instance = new command.default();
+            moderationCommandList.push(instance);
         });
 
-        return new MessageEmbed()
+        const moderationCommandsEmbed = new MessageEmbed()
             .setTitle('Comandos - Moderação')
-            .setDescription(listModCommands)
             .setThumbnail(icons.questionIcon);
+
+        moderationCommandList.forEach((command) => {
+            moderationCommandsEmbed.addField(
+                command.title.toLowerCase(),
+                command.description
+            );
+        });
+
+        return moderationCommandsEmbed;
     }
 
     showsFunnyEmbed(): MessageEmbed {
-        let listFunnyCommands = '';
-        this.funnyCommands.forEach((command) => {
-            listFunnyCommands += `\`${command}\` `;
+        const funnyCommandsFiles = fs
+            .readdirSync(path.resolve(__dirname, '..', 'funny'))
+            .filter((file) => file.endsWith('.js') || file.endsWith('.ts'));
+
+        const utilityCommandList = new Array<CommandInterface>();
+
+        funnyCommandsFiles.forEach((file) => {
+            const command = require(`../funny/${file}`);
+            if (!file) return;
+            const instance = new command.default();
+            utilityCommandList.push(instance);
         });
 
-        return new MessageEmbed()
+        const funnyCommandsEmbed = new MessageEmbed()
             .setTitle('Comandos - Diversão')
-            .setDescription(listFunnyCommands)
             .setThumbnail(icons.questionIcon);
+
+        utilityCommandList.forEach((command) => {
+            funnyCommandsEmbed.addField(
+                command.title.toLowerCase(),
+                command.description
+            );
+        });
+
+        return funnyCommandsEmbed;
     }
 
     showsUtilityEmbed(): MessageEmbed {
-        let listUtilityCommands = '';
+        const utilityCommandFiles = fs
+            .readdirSync(path.resolve(__dirname, '..', 'utility'))
+            .filter((file) => file.endsWith('.js') || file.endsWith('.ts'));
 
-        this.utilityCommands.forEach((command) => {
-            listUtilityCommands += `\`${command}\` `;
+        const utilityCommandList = new Array<CommandInterface>();
+
+        utilityCommandFiles.forEach((file) => {
+            const command = require(`../utility/${file}`);
+            if (!file) return;
+            const instance = new command.default();
+            utilityCommandList.push(instance);
         });
 
-        return new MessageEmbed()
+        const utilityEmbed = new MessageEmbed()
             .setTitle('Comandos - Utilidades')
-            .setDescription(listUtilityCommands)
             .setThumbnail(icons.questionIcon);
+
+        utilityCommandList.forEach((command) => {
+            utilityEmbed.addField(
+                command.title.toLowerCase(),
+                command.description
+            );
+        });
+
+        return utilityEmbed;
+    }
+
+    showsQuestionEmbed() {
+        return new MessageEmbed()
+            .setTitle('Kyouka - Sobre')
+
+            .setDescription(
+                'Olá! O que deseja?! Digo, prazer! Estou tão acostumada a servir servidores que erro no vocabulário, as vezes :sweat_smile:! Enfim, me chamo Kyouka, como sabes, e meu foco aqui é servir a todos e ter todo tipo de comando possível, afinal, um bom bar é aquele que serve de tudo... Digo, servidor*... Abaixo deixo descritas algumas informações sobre mim.'
+            )
+            .setColor(kyoukaColors.deepPurple)
+            .addField('Linguagem:', 'TypeScript', true)
+            .addField('Lib (biblioteca):', 'Discord.js', true)
+            .addField('Ano que fui criada:', 2020, true)
+            .addField('Meu objetivo:', 'Ser um BOT completo!', true)
+            .addField('Estou indo bem?', 'Me diga você!', true)
+            .setImage('https://i.imgur.com/5NpsUiG.gif');
     }
 }

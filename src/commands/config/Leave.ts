@@ -6,7 +6,7 @@ import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { sendLeaveMessage } from '../../events/guildMemberRemove';
 import { kyoukaColors } from '../../utils/colors';
 
-export class Leave implements CommandInterface {
+export default class Leave implements CommandInterface {
     public title = 'Leave';
     public description =
         'Configure uma mensagem de adeus quando um usuário deixar o servidor';

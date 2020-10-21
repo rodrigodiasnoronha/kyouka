@@ -22,7 +22,7 @@ interface JsonEmbed {
 
 export default class Embed implements CommandInterface {
     public title = 'Embed';
-    public description = 'Easdas';
+    public description = 'Crie um embed';
     public aliases = ['embed'];
     public args = '';
 

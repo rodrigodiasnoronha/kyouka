@@ -20,11 +20,8 @@ import Attack from '../commands/funny/attack';
 import Level from '../commands/leveling/level';
 import Welcome from '../commands/config/Welcome';
 import Changelog from '../commands/utility/changelog';
-import changelog from '../commands/utility/changelog';
-import { Leave } from '../commands/config/Leave';
+import Leave from '../commands/config/Leave';
 import Log from '../commands/config/Log';
-
-const prefix = process.env.BOT_PREFIX || '.';
 
 // commands instance
 const ban = new Ban();
