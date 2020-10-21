@@ -22,6 +22,8 @@ export default class HelpCommand implements CommandInterface {
         'prefix',
         'unmute',
         'welcome',
+        'leave',
+        'log',
     ];
     private funnyCommands = ['chorar', 'pensando', 'jankenpon', 'sad'];
     private utilityCommands = [

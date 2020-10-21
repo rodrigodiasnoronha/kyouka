@@ -7,6 +7,10 @@ import { ready } from './events/ready';
 import { guildCreate } from './events/guildCreate';
 import { presences } from './utils/presences';
 import { guildMemberRemove } from './events/guildMemberRemove';
+import { guildBanAdd } from './events/guildBanAdd';
+import { guildBanRemove } from './events/guildBanRemove';
+import { messageDelete } from './events/messageDelete';
+import { messageUpdate } from './events/messageUpdate';
 
 const client = new Client();
 
@@ -32,6 +36,10 @@ client.on('warn', console.warn);
 client.on('guildCreate', guildCreate);
 client.on('guildMemberAdd', guildMemberAdd);
 client.on('guildMemberRemove', guildMemberRemove);
+client.on('guildBanRemove', guildBanRemove);
+client.on('messageDelete', messageDelete);
+client.on('messageUpdate', messageUpdate);
+client.on('guildBanAdd', guildBanAdd);
 client.on('message', async (messageSent) => {
     await message(messageSent, prefixCollection);
 });

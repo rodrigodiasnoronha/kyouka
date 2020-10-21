@@ -2,6 +2,7 @@ import { CommandInterface } from '../../types';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { sendErrorMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Attack implements CommandInterface {
     public title = 'Attack';
@@ -105,6 +106,7 @@ export default class Attack implements CommandInterface {
         if (!user) return sendErrorMessage(errorReplies.mentionUser, message);
 
         const messageEmbed = new MessageEmbed()
+            .setColor(kyoukaColors.yellow)
             .setDescription(
                 `<@${message.author}> atacou <@${user}>! - ${reply.message}`
             )

@@ -2,6 +2,7 @@ import { CommandInterface } from '../../types';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { images } from '../../utils/images';
 import { sendErrorMessage } from '../../utils/sendMessage';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Thinking implements CommandInterface {
     public title = 'Thinking';
@@ -34,6 +35,7 @@ export default class Thinking implements CommandInterface {
             );
 
         const messageEmbed = new MessageEmbed()
+            .setColor(kyoukaColors.yellow)
             .setDescription(reply)
             .setImage(gif);
 

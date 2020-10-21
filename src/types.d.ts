@@ -38,6 +38,10 @@ interface GuildModelInterface extends Document {
     prefix: string;
     memberCount?: number;
 
+    // log properties
+    log_channel?: string;
+    log_status: 'on' | 'off';
+
     // welcome properties
     welcome_status: 'on' | 'off';
     welcome_title: string;

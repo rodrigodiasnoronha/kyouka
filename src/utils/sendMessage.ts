@@ -1,4 +1,5 @@
 import { Message, MessageEmbed } from 'discord.js';
+import { kyoukaColors } from './colors';
 
 export const sendErrorMessage = (
     error: { errorMessage: string },
@@ -6,7 +7,7 @@ export const sendErrorMessage = (
 ) => {
     const messageEmbed = new MessageEmbed()
         .setDescription(`<@${message.author}> ${error.errorMessage}`)
-        .setColor('#f44336');
+        .setColor(kyoukaColors.red);
     return message.channel.send(messageEmbed);
 };
 
@@ -16,7 +17,7 @@ export const sendSuccessMessage = (
 ) => {
     const messageEmbed = new MessageEmbed()
         .setDescription(successMessage)
-        .setColor('#00e676');
+        .setColor(kyoukaColors.green);
 
     return message.channel.send(messageEmbed);
 };

@@ -5,6 +5,7 @@ import { createGuild } from '../../functions/createGuild';
 import { sendWelcomeMessage } from '../../events/guildMemberAdd';
 import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Welcome implements CommandInterface {
     public title = 'Welcome';
@@ -216,6 +217,7 @@ export default class Welcome implements CommandInterface {
 
         const welcomeEmbed = new MessageEmbed()
             .setTitle('Mensagem de Boas Vindas')
+            .setColor(kyoukaColors.purple)
             .addField('Status', welcomeStatus)
             .addField('Título', guild.welcome_title)
             .addField('Subtítulo', guild.welcome_subtitle)
@@ -233,6 +235,7 @@ export default class Welcome implements CommandInterface {
     help(message: Message, prefix: string) {
         const helpEmbed = new MessageEmbed()
             .setTitle('Ajuda - Mensagem Boas Vindas')
+            .setColor(kyoukaColors.purple)
             .addField(
                 prefix + 'welcome on/off',
                 'Ativar/desativar sistema de boas vindas',
@@ -274,7 +277,7 @@ export default class Welcome implements CommandInterface {
             )
             .addField(
                 'Variáveis',
-                '`$user` Usuário\n`$user_id` ID do usuário\n`$member_count` Total de membros no servidor\n`$username` Nome de usuário\n`$server_name` Nome deste servidor',
+                '`$user` Usuário\n`$user_id` ID do usuário\n`$member_count` Total de membros no servidor\n`$name` Nome de usuário\n`$server_name` Nome deste servidor',
                 false
             );
 

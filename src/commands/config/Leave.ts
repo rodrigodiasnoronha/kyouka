@@ -4,6 +4,7 @@ import { Guild } from '../../database/entities/Guild';
 import { createGuild } from '../../functions/createGuild';
 import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { sendLeaveMessage } from '../../events/guildMemberRemove';
+import { kyoukaColors } from '../../utils/colors';
 
 export class Leave implements CommandInterface {
     public title = 'Leave';
@@ -53,7 +54,7 @@ export class Leave implements CommandInterface {
             await guild.save();
 
             return sendSuccessMessage(
-                `Canal de adeus ${
+                `Sistema de adeus ${
                     args[0] === 'on' ? 'ativado' : 'desativado'
                 } com sucesso.`,
                 message
@@ -210,6 +211,7 @@ export class Leave implements CommandInterface {
 
         const leaveEmbed = new MessageEmbed()
             .setTitle('Mensagem de Adeus')
+            .setColor(kyoukaColors.purple)
             .addField('Status', leaveStatus)
             .addField('Título', guild.leave_title)
             .addField('Subtítulo', guild.leave_subtitle || 'retirar isso')
@@ -227,6 +229,7 @@ export class Leave implements CommandInterface {
     help(message: Message, prefix: string) {
         const helpEmbed = new MessageEmbed()
             .setTitle('Ajuda - Mensagem Boas Vindas')
+            .setColor(kyoukaColors.purple)
             .addField(
                 prefix + 'leave on/off',
                 'Ativar/desativar sistema de mensagens de adeus',
@@ -268,7 +271,7 @@ export class Leave implements CommandInterface {
             )
             .addField(
                 'Variáveis',
-                '`$user` Usuário\n`$user_id` ID do usuário\n`$member_count` Total de membros no servidor\n`$username` Nome de usuário\n`$server_name` Nome deste servidor',
+                '`$user` Usuário\n`$user_id` ID do usuário\n`$member_count` Total de membros no servidor\n`$name` Nome de usuário\n`$server_name` Nome deste servidor',
                 false
             );
 

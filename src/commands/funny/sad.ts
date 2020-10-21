@@ -1,6 +1,7 @@
 import { CommandInterface } from '../../types';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { images } from '../../utils/images';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Sad implements CommandInterface {
     public title = 'Sad';
@@ -24,6 +25,7 @@ export default class Sad implements CommandInterface {
         ];
 
         const messageEmbed = new MessageEmbed()
+            .setColor(kyoukaColors.yellow)
             .setDescription(
                 `<@${message.author}> está triste! - ${customMessage}`
             )

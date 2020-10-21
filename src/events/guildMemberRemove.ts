@@ -10,6 +10,7 @@ import {
 import { GuildModelInterface } from '../types';
 import { Guild as GuildModel } from '../database/entities/Guild';
 import { createGuild } from '../functions/createGuild';
+import { kyoukaColors } from '../utils/colors';
 
 export async function guildMemberRemove(
     guildMember: GuildMember | PartialGuildMember
@@ -65,11 +66,12 @@ export async function sendLeaveMessage(
 
     // formatação footer
     let footer = guildModel.leave_footer.replace(/\$user_id/g, user.id);
-    footer = footer.replace(/\$username/g, user.username);
+    footer = footer.replace(/\$name/g, user.username);
     footer = footer.replace(/\$user/g, `<@${user}>`);
 
     const leaveEmbed = new MessageEmbed();
 
+    leaveEmbed.setColor(kyoukaColors.red);
     if (title) leaveEmbed.setTitle(title);
     if (subtitle) leaveEmbed.setDescription(subtitle);
     if (guildModel.leave_thumbnail)

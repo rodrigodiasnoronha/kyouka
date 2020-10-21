@@ -10,9 +10,13 @@ export const createGuild = async (guild: Guild | null) => {
         prefix: process.env.BOT_PREFIX || '.',
         memberCount: guild.memberCount,
 
+        // log
+        log_status: 'off',
+        log_channel: '',
+
         // welcome
         welcome_status: 'off',
-        welcome_title: 'Bem vindo, $username!',
+        welcome_title: 'Bem vindo, $name!',
         welcome_subtitle: 'Agora temos $member_count neste servidor!',
         welcome_footer: 'ID do usuário: $user_id',
         welcome_image: '',
@@ -20,7 +24,7 @@ export const createGuild = async (guild: Guild | null) => {
 
         // leave
         leave_status: 'off',
-        leave_title: 'Adeus, $username!',
+        leave_title: 'Adeus, $name!',
         leave_subtitle:
             'Até a próxima, $user! Agora temos $member_count membros!',
         leave_footer: 'ID do usuário: $user_id',

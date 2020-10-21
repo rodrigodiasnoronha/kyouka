@@ -22,6 +22,7 @@ import Welcome from '../commands/config/Welcome';
 import Changelog from '../commands/utility/changelog';
 import changelog from '../commands/utility/changelog';
 import { Leave } from '../commands/config/Leave';
+import Log from '../commands/config/Log';
 
 const prefix = process.env.BOT_PREFIX || '.';
 
@@ -47,6 +48,7 @@ const levelCommand = new Level();
 const welcomeCommand = new Welcome();
 const changelogCommand = new Changelog();
 const leaveCommand = new Leave();
+const logCommand = new Log();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -151,4 +153,7 @@ export const message = async (
 
     if (changelogCommand.aliases.includes(command))
         return changelogCommand.run(message.client, message, args);
+
+    if (logCommand.aliases.includes(command))
+        return logCommand.run(message.client, message, args);
 };

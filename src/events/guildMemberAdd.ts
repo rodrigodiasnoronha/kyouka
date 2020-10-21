@@ -10,6 +10,7 @@ import {
 import { Guild as GuildModel } from '../database/entities/Guild';
 import { createGuild } from '../functions/createGuild';
 import { GuildModelInterface } from '../types';
+import { kyoukaColors } from '../utils/colors';
 
 export const guildMemberAdd = async (
     guildMember: GuildMember | PartialGuildMember
@@ -77,11 +78,12 @@ export async function sendWelcomeMessage(
 
     // formatação footer
     let footer = guildModel.welcome_footer.replace(/\$user_id/g, user.id);
-    footer = footer.replace(/\$username/g, user.username);
+    footer = footer.replace(/\$name/g, user.username);
     footer = footer.replace(/\$user/g, `<@${user}>`);
 
     const welcomeEmbed = new MessageEmbed();
 
+    welcomeEmbed.setColor(kyoukaColors.green);
     if (title) welcomeEmbed.setTitle(title);
     if (subtitle) welcomeEmbed.setDescription(subtitle);
     if (guildModel.welcome_thumbnail)

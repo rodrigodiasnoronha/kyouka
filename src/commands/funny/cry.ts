@@ -1,6 +1,7 @@
 import { CommandInterface } from '../../types';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { images } from '../../utils/images';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class CryCommand implements CommandInterface {
     public title = 'Cry';
@@ -15,6 +16,7 @@ export default class CryCommand implements CommandInterface {
             ];
 
         const messageEmbed = new MessageEmbed()
+            .setColor(kyoukaColors.yellow)
             .setDescription(`<@${message.author}> está chorando!`)
             .setImage(gif);
 

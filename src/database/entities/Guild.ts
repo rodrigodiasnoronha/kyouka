@@ -21,6 +21,10 @@ const GuildSchema = new Schema(
         prefix: { type: String },
         memberCount: { type: Number, default: 0 },
 
+        // log properties
+        log_channel: { type: String },
+        log_status: { type: String, default: 'off' },
+
         // welcome properties
         welcome_status: { type: String, default: 'off' },
         welcome_channel: { type: String },

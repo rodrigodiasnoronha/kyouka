@@ -25,7 +25,8 @@
         "jimp": "^0.16.1",
         "moment": "^2.29.1",
         "mongoose": "^5.10.9",
-        "ms": "^2.1.2"
+        "ms": "^2.1.2",
+        "pm2": "^4.5.0"
     },
     "devDependencies": {
         "@types/axios": "^0.14.0",
