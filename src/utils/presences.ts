@@ -36,4 +36,25 @@ export const presences: PresenceData[] = [
             name: 'As mensagens no seu servidor.',
         },
     },
+    {
+        status: 'online',
+        activity: {
+            type: 'WATCHING',
+            name: 'Animes',
+        },
+    },
+    {
+        status: 'online',
+        activity: {
+            name: 'Openings de One Piece',
+            type: 'LISTENING',
+        },
+    },
+    {
+        status: 'dnd',
+        activity: {
+            name: 'Minecraft',
+            type: 'PLAYING',
+        },
+    },
 ];
