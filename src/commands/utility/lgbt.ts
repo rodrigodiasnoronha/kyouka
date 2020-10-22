@@ -52,6 +52,7 @@ export default class Lgbt implements CommandInterface {
 
         // envia o arquivo
         const attachment = new MessageAttachment(canvas.toBuffer(), 'lgbt.png');
-        return message.channel.send(attachment);
+        await message.channel.send(attachment);
+        await message.delete();
     }
 }

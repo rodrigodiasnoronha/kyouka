@@ -23,7 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/lgbt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/lgbt.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/utility/gay.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -124,7 +126,8 @@
       <workItem from="1602969474229" duration="16106000" />
       <workItem from="1602998104409" duration="282000" />
       <workItem from="1603041474358" duration="6105000" />
-      <workItem from="1603316332436" duration="3742000" />
+      <workItem from="1603316332436" duration="3896000" />
+      <workItem from="1603325074593" duration="2813000" />
     </task>
     <servers />
   </component>
@@ -183,12 +186,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="112" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
-    <state x="229" y="9" width="992" height="727" key="SettingsEditor" timestamp="1603046105394">
-      <screen x="0" y="0" width="1366" height="741" />
+    <state x="243" y="18" width="992" height="727" key="SettingsEditor" timestamp="1603325600212">
+      <screen x="0" y="0" width="1366" height="767" />
     </state>
     <state x="294" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602022012176" />
     <state x="229" y="6" width="998" height="730" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1602983334351" />
     <state x="229" y="9" width="992" height="727" key="SettingsEditor/0.0.1366.741@0.0.1366.741" timestamp="1603046105394" />
+    <state x="243" y="18" width="992" height="727" key="SettingsEditor/0.0.1366.767@0.0.1366.767" timestamp="1603325600212" />
     <state width="498" height="451" key="SwitcherDM" timestamp="1602984180703">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
