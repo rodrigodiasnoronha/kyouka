@@ -17,6 +17,7 @@ export default class SayCommand implements CommandInterface {
                 },
                 message
             );
-        return message.channel.send(args.join(' '));
+        await message.channel.send(args.join(' '));
+        await message.delete();
     }
 }
