@@ -28,6 +28,7 @@ import Communism from '../commands/utility/communism';
 import Chat from '../commands/moderation/chat';
 import ChannelSync from "../commands/moderation/channelsync";
 import Kavatar from "../commands/creator/kavatar";
+import Support from "../commands/utility/support";
 
 // commands instance
 const ban = new Ban();
@@ -58,6 +59,7 @@ const communismCommand = new Communism();
 const chatCommand = new Chat();
 const channelSync = new ChannelSync();
 const kavatar = new Kavatar();
+const support = new Support();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -180,6 +182,9 @@ export const message = async (
 
     if (channelSync.aliases.includes(command))
         return channelSync.run(message.client, message, args);
+
+    if (support.aliases.includes(command))
+        return support.run(message.client, message, args);
 
     if (kavatar.aliases.includes(command))
         return kavatar.run(message.client, message, args);
