@@ -29,6 +29,7 @@ import Chat from '../commands/moderation/chat';
 import ChannelSync from "../commands/moderation/channelsync";
 import Kavatar from "../commands/creator/kavatar";
 import Support from "../commands/utility/support";
+import Userinfo from "../commands/utility/userinfo";
 
 // commands instance
 const ban = new Ban();
@@ -60,6 +61,7 @@ const chatCommand = new Chat();
 const channelSync = new ChannelSync();
 const kavatar = new Kavatar();
 const support = new Support();
+const userInfo = new Userinfo();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -185,6 +187,9 @@ export const message = async (
 
     if (support.aliases.includes(command))
         return support.run(message.client, message, args);
+
+    if (userInfo.aliases.includes(command))
+        return userInfo.run(message.client, message, args);
 
     if (kavatar.aliases.includes(command))
         return kavatar.run(message.client, message, args);
