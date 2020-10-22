@@ -24,6 +24,7 @@ import Leave from '../commands/config/Leave';
 import Log from '../commands/config/Log';
 import Lgbt from "../commands/utility/lgbt";
 import Gay from "../commands/utility/gay";
+import Communism from "../commands/utility/communism";
 
 // commands instance
 const ban = new Ban();
@@ -50,6 +51,7 @@ const leaveCommand = new Leave();
 const logCommand = new Log();
 const lgbtCommand = new Lgbt();
 const gayCommand = new Gay();
+const communismCommand = new Communism();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -163,5 +165,8 @@ export const message = async (
 
     if (gayCommand.aliases.includes(command))
         return gayCommand.run(message.client, message, args);
+
+    if (communismCommand.aliases.includes(command))
+        return communismCommand.run(message.client, message, args);
 
 };

@@ -23,7 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/utility/gay.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/utility/communism.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/communism.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
     </list>
@@ -57,7 +58,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,6 +73,11 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.dev:start">
     <configuration name="dev:start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -127,7 +133,7 @@
       <workItem from="1602998104409" duration="282000" />
       <workItem from="1603041474358" duration="6105000" />
       <workItem from="1603316332436" duration="3896000" />
-      <workItem from="1603325074593" duration="2813000" />
+      <workItem from="1603325074593" duration="5183000" />
     </task>
     <servers />
   </component>
