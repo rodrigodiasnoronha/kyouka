@@ -22,9 +22,11 @@ import Welcome from '../commands/config/Welcome';
 import Changelog from '../commands/utility/changelog';
 import Leave from '../commands/config/Leave';
 import Log from '../commands/config/Log';
-import Lgbt from "../commands/utility/lgbt";
-import Gay from "../commands/utility/gay";
-import Communism from "../commands/utility/communism";
+import Lgbt from '../commands/utility/lgbt';
+import Gay from '../commands/utility/gay';
+import Communism from '../commands/utility/communism';
+import Chat from '../commands/moderation/chat';
+import ChannelSync from "../commands/moderation/channelsync";
 
 // commands instance
 const ban = new Ban();
@@ -52,6 +54,8 @@ const logCommand = new Log();
 const lgbtCommand = new Lgbt();
 const gayCommand = new Gay();
 const communismCommand = new Communism();
+const chatCommand = new Chat();
+const channelSync = new ChannelSync();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -169,4 +173,9 @@ export const message = async (
     if (communismCommand.aliases.includes(command))
         return communismCommand.run(message.client, message, args);
 
+    if (chatCommand.aliases.includes(command))
+        return chatCommand.run(message.client, message, args);
+
+    if (channelSync.aliases.includes(command))
+        return channelSync.run(message.client, message, args);
 };

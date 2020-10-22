@@ -23,9 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/utility/communism.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/communism.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/moderation/channelsync.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/moderation/chat.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/communism.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/communism.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/gay.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/gay.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/lgbt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/lgbt.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +136,7 @@
       <workItem from="1602998104409" duration="282000" />
       <workItem from="1603041474358" duration="6105000" />
       <workItem from="1603316332436" duration="3896000" />
-      <workItem from="1603325074593" duration="5183000" />
+      <workItem from="1603325074593" duration="8583000" />
     </task>
     <servers />
   </component>

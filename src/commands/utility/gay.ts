@@ -1,8 +1,8 @@
-import {CommandInterface} from "../../types";
-import {Client, Message, MessageAttachment} from "discord.js";
-import {createCanvas, loadImage} from 'canvas'
-import {images} from "../../utils/images";
-import {kyoukaColors} from "../../utils/colors";
+import { CommandInterface } from '../../types';
+import { Client, Message, MessageAttachment } from 'discord.js';
+import { createCanvas, loadImage } from 'canvas';
+import { images } from '../../utils/images';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Gay implements CommandInterface {
     public title = 'Gay';
@@ -13,10 +13,12 @@ export default class Gay implements CommandInterface {
     public async run(client: Client, message: Message, args: string[]) {
         const user = message.mentions.users.first();
 
-        const userProfilePicURL = user ? user.avatarURL({
-            size: 1024,
-            format: 'png'
-        }) : message.author.avatarURL({size: 1024, format: 'png'});
+        const userProfilePicURL = user
+            ? user.avatarURL({
+                  size: 1024,
+                  format: 'png',
+              })
+            : message.author.avatarURL({ size: 1024, format: 'png' });
 
         const percentage = Math.round(Math.random() * 100);
         const result = `Você é ${percentage}% gay`;
@@ -26,9 +28,16 @@ export default class Gay implements CommandInterface {
         const context = canvas.getContext('2d');
 
         // adiciona a imagem de perfil ao contexto do canvas
-        const canvasProfileImage = await loadImage(userProfilePicURL || images.discordDefaultProfileImage);
-        context.drawImage(canvasProfileImage, 0, 0, canvas.width, canvas.height);
-
+        const canvasProfileImage = await loadImage(
+            userProfilePicURL || images.discordDefaultProfileImage
+        );
+        context.drawImage(
+            canvasProfileImage,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
 
         // adiciona cores LGBT no canvas
         context.fillStyle = 'rgba(244,67,54, 0.4)'; // vermelho
@@ -43,7 +52,7 @@ export default class Gay implements CommandInterface {
         context.fillStyle = 'rgba(76,175,80,0.4)'; // verde
         context.fillRect(511.8, 0, 170.6, canvas.height);
 
-        context.fillStyle = 'rgba(33,150,243,0.4)' // azul
+        context.fillStyle = 'rgba(33,150,243,0.4)'; // azul
         context.fillRect(682.4, 0, 170.6, canvas.height);
 
         context.fillStyle = 'rgba(103,58,183, 0.4)'; // roxo
