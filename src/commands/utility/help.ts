@@ -14,7 +14,7 @@ import { kyoukaColors } from '../../utils/colors';
 export default class HelpCommand implements CommandInterface {
     public title = 'Help';
     public description = 'Meu painel de ajuda';
-    public aliases = ['ajuda', 'help'];
+    public aliases = ['ajuda', 'help', 'commands', 'comandos'];
     public args = '';
 
     public async run(client: Client, message: Message, args: string[]) {
@@ -55,18 +55,19 @@ export default class HelpCommand implements CommandInterface {
         );
 
         collector.on('collect', async (reaction, userReact) => {
-            if (reaction.emoji.name === '🔥') {
-                const embed = this.showsFunnyEmbed();
-                await messageSent.edit(embed);
-            } else if (reaction.emoji.name === '🛠️') {
-                const embed = this.showsUtilityEmbed();
-                await messageSent.edit(embed);
-            } else if (reaction.emoji.name === '👮') {
-                const embed = this.showsModerationEmbed();
-                await messageSent.edit(embed);
-            } else if (reaction.emoji.name === '❓') {
-                const embed = this.showsQuestionEmbed();
-                await messageSent.edit(embed);
+            switch (reaction.emoji.name) {
+                case '🔥':
+                    await messageSent.edit(this.showsFunnyEmbed());
+                    break;
+                case '🛠️':
+                    await messageSent.edit(this.showsUtilityEmbed());
+                    break;
+                case '👮':
+                    await messageSent.edit(this.showsModerationEmbed());
+                    break;
+                case '❓':
+                    await messageSent.edit(this.showsQuestionEmbed());
+                    break;
             }
         });
 
@@ -162,7 +163,6 @@ export default class HelpCommand implements CommandInterface {
     showsQuestionEmbed() {
         return new MessageEmbed()
             .setTitle('Kyouka - Sobre')
-
             .setDescription(
                 'Olá! O que deseja?! Digo, prazer! Estou tão acostumada a servir servidores que erro no vocabulário, as vezes :sweat_smile:! Enfim, me chamo Kyouka, como sabes, e meu foco aqui é servir a todos e ter todo tipo de comando possível, afinal, um bom bar é aquele que serve de tudo... Digo, servidor*... Abaixo deixo descritas algumas informações sobre mim.'
             )

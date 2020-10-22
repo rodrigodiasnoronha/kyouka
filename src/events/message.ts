@@ -26,10 +26,14 @@ import Lgbt from '../commands/utility/lgbt';
 import Gay from '../commands/utility/gay';
 import Communism from '../commands/utility/communism';
 import Chat from '../commands/moderation/chat';
-import ChannelSync from "../commands/moderation/channelsync";
-import Kavatar from "../commands/creator/kavatar";
-import Support from "../commands/utility/support";
-import Userinfo from "../commands/utility/userinfo";
+import ChannelSync from '../commands/moderation/channelsync';
+import Kavatar from '../commands/creator/kavatar';
+import Support from '../commands/utility/support';
+import Userinfo from '../commands/utility/userinfo';
+import Eval from '../commands/creator/eval';
+import Ping from '../commands/utility/ping';
+import { sendSuccessMessage } from '../utils/sendMessage';
+import Status from '../commands/creator/status';
 
 // commands instance
 const ban = new Ban();
@@ -62,6 +66,9 @@ const channelSync = new ChannelSync();
 const kavatar = new Kavatar();
 const support = new Support();
 const userInfo = new Userinfo();
+const evalCommand = new Eval();
+const pingCommand = new Ping();
+const statusCommand = new Status();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -85,7 +92,16 @@ export const message = async (
         prefix = defaultPrefix;
     }
 
-    if (!message.content.toLowerCase().startsWith(prefix)) return;
+    // envia uma mensagem caso o BOT seja mecionado;
+    if (!message.content.toLowerCase().startsWith(prefix)) {
+        if (message.mentions.has(message.client.user!.id)) {
+            return sendSuccessMessage(
+                `Olá, <@${message.author}>! Se quiser saber sobre meus comandos, digite \`${prefix}ajuda\`.`,
+                message
+            );
+        }
+        return;
+    }
 
     /**
      *
@@ -191,6 +207,14 @@ export const message = async (
     if (userInfo.aliases.includes(command))
         return userInfo.run(message.client, message, args);
 
-    if (kavatar.aliases.includes(command))
-        return kavatar.run(message.client, message, args);
+    if (kavatar.aliases.includes(command)) return kavatar.run(message, args);
+
+    if (evalCommand.aliases.includes(command))
+        return evalCommand.run(message, args);
+
+    if (pingCommand.aliases.includes(command))
+        return pingCommand.run(message, args);
+
+    if (statusCommand.aliases.includes(command))
+        return statusCommand.run(message, args);
 };

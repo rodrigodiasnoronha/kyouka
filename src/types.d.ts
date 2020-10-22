@@ -6,7 +6,7 @@ interface CommandInterface {
     description: string;
     args: string;
     aliases: Array<string>;
-    run: run1 | run2;
+    run: run1 | run2 | run3;
 }
 
 interface run1 {
@@ -20,6 +20,13 @@ interface run2 {
         args: string[],
         prefixCollection: Collection<string, string>
     ): Promise<Message | undefined> | Promise<any> | any;
+}
+
+interface run3 {
+    (message: Message, args: string[]):
+        | Promise<Message | undefined>
+        | Promise<any>
+        | any;
 }
 
 interface MuteDocument extends Document {

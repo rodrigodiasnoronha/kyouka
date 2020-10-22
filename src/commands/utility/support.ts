@@ -1,9 +1,9 @@
-import {CommandInterface} from "../../types";
-import {Client, Message} from "discord.js";
-import {sendErrorMessage} from "../../utils/sendMessage";
+import { CommandInterface } from '../../types';
+import { Client, Message } from 'discord.js';
+import { sendErrorMessage } from '../../utils/sendMessage';
 
 export default class Support implements CommandInterface {
-    public title  = 'Support';
+    public title = 'Support';
     public description = 'Obtenha suporte da minha equipe!';
     public args = '';
     public aliases = ['support', 'suporte'];
@@ -15,7 +15,13 @@ export default class Support implements CommandInterface {
             await message.author.send(dmMessage);
             return message.reply('verifique sua DM.');
         } catch (err) {
-            return sendErrorMessage({errorMessage: 'Parece que não consegui te enviar uma mensagem na DM. Se puder abrir sua caixa de mensagens, talvez isso resolva esse problema.'}, message);
+            return sendErrorMessage(
+                {
+                    errorMessage:
+                        'Parece que não consegui te enviar uma mensagem na DM. Se puder abrir sua caixa de mensagens, talvez isso resolva esse problema.',
+                },
+                message
+            );
         }
     }
 }

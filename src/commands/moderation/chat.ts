@@ -11,9 +11,10 @@ export default class Chat implements CommandInterface {
     public async run(client: Client, message: Message, args: string[]) {
         if (!message.guild) return;
 
-        const userHasPermission = message.member?.hasPermission([
-            'ADMINISTRATOR',
-        ], { checkAdmin: true, checkOwner: true });
+        const userHasPermission = message.member?.hasPermission(
+            ['ADMINISTRATOR'],
+            { checkAdmin: true, checkOwner: true }
+        );
 
         if (!userHasPermission)
             return sendErrorMessage(errorReplies.permission, message);

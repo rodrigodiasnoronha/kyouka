@@ -1,10 +1,9 @@
-import {CommandInterface} from "../../types";
-import {Client, Message, MessageEmbed} from "discord.js";
-import {images} from "../../utils/images";
-import moment from 'moment'
+import { CommandInterface } from '../../types';
+import { Client, Message, MessageEmbed } from 'discord.js';
+import { images } from '../../utils/images';
+import moment from 'moment';
 import 'moment/locale/pt-br';
-import {kyoukaColors} from "../../utils/colors";
-
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Userinfo implements CommandInterface {
     public title = 'UserInfo';
@@ -18,7 +17,9 @@ export default class Userinfo implements CommandInterface {
 
         if (!user) return;
 
-        const userImage = user.avatarURL({  size: 256, format: "png" }) || images.discordDefaultProfileImage;
+        const userImage =
+            user.avatarURL({ size: 256, format: 'png' }) ||
+            images.discordDefaultProfileImage;
         const userCreatedAt = moment(user.createdAt).format('LLLL');
 
         const messageEmbed = new MessageEmbed()
@@ -34,6 +35,5 @@ export default class Userinfo implements CommandInterface {
             .setFooter(`Solicitado por ${message.author.username}.`);
 
         return message.channel.send(messageEmbed);
-
     }
 }
