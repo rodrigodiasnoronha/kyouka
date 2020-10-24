@@ -36,15 +36,7 @@ export default class Communism implements CommandInterface {
         context.fillStyle = 'rgba(214, 55, 55, 0.5)';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        // carregar icone comunismo
-        const communismIconPath = resolve(
-            __dirname,
-            '..',
-            '..',
-            'images',
-            'communism.png'
-        );
-        const communisnIconCanvas = await loadImage(communismIconPath);
+        const communisnIconCanvas = await loadImage(images.communisnIcon);
 
         // setar no canvas o icone
         const dy = canvas.height / 1.6;

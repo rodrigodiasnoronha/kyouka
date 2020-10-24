@@ -47,4 +47,5 @@ export const images = {
         'https://cdn.discordapp.com/embed/avatars/0.png',
     kyoukaThumbnail:
         'https://media.discordapp.net/attachments/762760319927844944/767203507983220736/Captura_de_tela_de_2020-10-17_22-52-38.png',
+    communisnIcon: 'https://i.imgur.com/t4vS5hI.png',
 };

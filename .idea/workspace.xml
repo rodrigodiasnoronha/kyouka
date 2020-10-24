@@ -23,20 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/creator/eval.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/creator/status.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/utility/ping.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/creator/kavatar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/creator/kavatar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/channelsync.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/channelsync.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/chat.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/chat.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/help.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/help.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/support.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/support.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/utility/userinfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/userinfo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/utility/communism.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/utility/communism.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/communism.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/images.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/images.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +141,7 @@
       <workItem from="1603325074593" duration="11716000" />
       <workItem from="1603394558693" duration="3627000" />
       <workItem from="1603398485550" duration="3045000" />
+      <workItem from="1603498965416" duration="115000" />
     </task>
     <servers />
   </component>

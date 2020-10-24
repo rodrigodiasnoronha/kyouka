@@ -1,5 +1,9 @@
 import { Client, Collection, Message } from 'discord.js';
 import { Document } from 'mongoose';
+declare module '*.png' {
+    const value: any;
+    export default value;
+}
 
 interface CommandInterface {
     title: string;
