@@ -1,7 +1,14 @@
-import { Client, Message } from 'discord.js';
+import {
+    Client,
+    Message,
+    MessageEmbed,
+    MessageReaction,
+    User,
+} from 'discord.js';
 import { CommandInterface } from '../../types';
 import { sendErrorMessage, sendSuccessMessage } from '../../utils/sendMessage';
 import { errorReplies } from '../../utils/errorReplies';
+import { kyoukaColors } from '../../utils/colors';
 
 export default class Ban implements CommandInterface {
     public title = 'Ban';
@@ -33,14 +40,63 @@ export default class Ban implements CommandInterface {
             return sendErrorMessage(errorReplies.banUserNotBannable, message);
 
         try {
-            await message.guild?.member(user)?.ban({ reason: banReason });
-
-            return sendSuccessMessage(
-                'Usuário banido. Baka! Ninguém mandou quebrar as regras',
-                message
+            const confirmationEmbed = this.showsConfirmationBanEmbed(
+                user,
+                banReason
             );
+            const confirmationMessage = await message.channel.send(
+                confirmationEmbed
+            );
+
+            await confirmationMessage.react('✅');
+            await confirmationMessage.react('❌');
+
+            const filter = (reaction: MessageReaction, userReaction: User) =>
+                ['✅', '❌'].includes(reaction.emoji.name) &&
+                userReaction.id === message.author.id;
+            const collector = confirmationMessage.createReactionCollector(
+                filter,
+                { max: 1, time: 20000, maxEmojis: 2 }
+            );
+
+            collector.on('collect', async (reaction, user) => {
+                // validation emoji
+                if (reaction.emoji.name === '❌') {
+                    await confirmationMessage.reactions.removeAll();
+                    return;
+                }
+
+                // ban
+                await message.guild?.member(user)?.ban({ reason: banReason });
+
+                // sucess message
+                const successEmbed = new MessageEmbed()
+                    .setColor(kyoukaColors.green)
+                    .setDescription(
+                        'Usuário banido. Baka! Ninguém mandou quebrar as regras'
+                    );
+                await confirmationMessage.delete();
+                return await message.channel.send(successEmbed);
+            });
+
+            collector.on('end', async () => {
+                await confirmationMessage.reactions.removeAll();
+            });
+
+            collector.on('dispose', async () => {
+                await confirmationMessage.reactions.removeAll();
+            });
         } catch (err) {
             return sendErrorMessage(errorReplies.executingCommand, message);
         }
+    }
+
+    showsConfirmationBanEmbed(user: User, reason: string) {
+        return new MessageEmbed()
+            .setTitle(`Banimento - ${user.username}`)
+            .setColor(kyoukaColors.red)
+            .setDescription(
+                `Tem certeza que deseja banir o usuário <@${user}> pelo motivo **${reason}**?`
+            );
     }
 }

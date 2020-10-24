@@ -33,7 +33,6 @@ import Userinfo from '../commands/utility/userinfo';
 import Eval from '../commands/creator/eval';
 import Ping from '../commands/utility/ping';
 import { sendSuccessMessage } from '../utils/sendMessage';
-import Status from '../commands/creator/status';
 
 // commands instance
 const ban = new Ban();
@@ -68,7 +67,6 @@ const support = new Support();
 const userInfo = new Userinfo();
 const evalCommand = new Eval();
 const pingCommand = new Ping();
-const statusCommand = new Status();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -214,7 +212,4 @@ export const message = async (
 
     if (pingCommand.aliases.includes(command))
         return pingCommand.run(message, args);
-
-    if (statusCommand.aliases.includes(command))
-        return statusCommand.run(message, args);
 };
