@@ -33,6 +33,10 @@ import Userinfo from '../commands/utility/userinfo';
 import Eval from '../commands/creator/eval';
 import Ping from '../commands/utility/ping';
 import { sendSuccessMessage } from '../utils/sendMessage';
+import Prune from '../commands/moderation/prune';
+import Invite from '../commands/utility/invite';
+import GuildIcon from '../commands/utility/guildicon';
+import Avatar from '../commands/utility/avatar';
 
 // commands instance
 const ban = new Ban();
@@ -67,6 +71,10 @@ const support = new Support();
 const userInfo = new Userinfo();
 const evalCommand = new Eval();
 const pingCommand = new Ping();
+const prune = new Prune();
+const invite = new Invite();
+const guildIcon = new GuildIcon();
+const avatar = new Avatar();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -212,4 +220,13 @@ export const message = async (
 
     if (pingCommand.aliases.includes(command))
         return pingCommand.run(message, args);
+
+    if (prune.aliases.includes(command)) return prune.run(message, args);
+
+    if (invite.aliases.includes(command)) return invite.run(message, args);
+
+    if (guildIcon.aliases.includes(command))
+        return guildIcon.run(message, args);
+
+    if (avatar.aliases.includes(command)) return avatar.run(message, args);
 };
