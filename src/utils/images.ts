@@ -64,6 +64,15 @@ export const images = {
         'https://i.pinimg.com/originals/5d/93/f4/5d93f4ca1115d4f9e01a67ba9250f14f.gif',
         'https://i.pinimg.com/originals/6e/a9/7b/6ea97b29209318c70ae8916ceb19827a.gif',
     ],
+    shameGifs: [
+        'https://i.pinimg.com/originals/c8/51/28/c851280dfc35207936e407655e2226bb.gif',
+        'https://i.pinimg.com/originals/47/fe/a1/47fea17927f5e62dfc054146851c3fee.gif',
+        'https://i.pinimg.com/originals/09/7f/46/097f46e1db35653902b10b0a322c908f.gif',
+        'https://i.pinimg.com/originals/5e/92/9a/5e929a9b4984b48bd0ab5f43a591b687.gif',
+        'https://i.pinimg.com/originals/db/b3/b3/dbb3b386a2cfa8d681c590b8196bec0f.gif',
+        'https://i.pinimg.com/originals/38/ef/a1/38efa19bd76d3d1a7edbf1ace18a4ec1.gif',
+        'https://i.pinimg.com/originals/f5/6a/4a/f56a4ab55f16832a5c887b8b52d0b04d.gif',
+    ],
     discordDefaultProfileImage:
         'https://cdn.discordapp.com/embed/avatars/0.png',
     kyoukaThumbnail:
