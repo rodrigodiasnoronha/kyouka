@@ -57,6 +57,13 @@ export const images = {
         'https://i.pinimg.com/originals/b3/9c/5d/b39c5db227c2ccf82073512786f97183.gif',
         'https://i.pinimg.com/originals/0c/6b/9e/0c6b9e1b1e328087bf4a7079b1d3db5b.gif',
     ],
+    hugGif: [
+        'https://i.pinimg.com/originals/aa/27/00/aa27008ab7250b9f8b32abd95f6c4025.gif',
+        'https://i.pinimg.com/originals/50/6a/a9/506aa95bbb0a71351bcaa753eaa2a45c.gif',
+        'https://i.pinimg.com/originals/22/f5/33/22f5333a63315dcb874f72e137fa0d92.gif',
+        'https://i.pinimg.com/originals/5d/93/f4/5d93f4ca1115d4f9e01a67ba9250f14f.gif',
+        'https://i.pinimg.com/originals/6e/a9/7b/6ea97b29209318c70ae8916ceb19827a.gif',
+    ],
     discordDefaultProfileImage:
         'https://cdn.discordapp.com/embed/avatars/0.png',
     kyoukaThumbnail:
