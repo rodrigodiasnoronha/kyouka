@@ -37,6 +37,9 @@ import Prune from '../commands/moderation/prune';
 import Invite from '../commands/utility/invite';
 import GuildIcon from '../commands/utility/guildicon';
 import Avatar from '../commands/utility/avatar';
+import Kiss from '../commands/funny/kiss';
+
+
 
 // commands instance
 const ban = new Ban();
@@ -75,6 +78,7 @@ const prune = new Prune();
 const invite = new Invite();
 const guildIcon = new GuildIcon();
 const avatar = new Avatar();
+const kiss = new  Kiss();
 
 const defaultPrefix = process.env.BOT_PREFIX as string;
 
@@ -229,4 +233,6 @@ export const message = async (
         return guildIcon.run(message, args);
 
     if (avatar.aliases.includes(command)) return avatar.run(message, args);
+
+    if (kiss.aliases.includes(command)) return kiss.run(message, args);
 };
