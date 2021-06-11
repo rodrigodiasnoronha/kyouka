@@ -7,7 +7,7 @@
  * */
 
 import { Schema, model } from 'mongoose';
-import { GuildModelInterface } from '../../../types';
+import { GuildModelInterface } from '../../types';
 
 const GuildSchema = new Schema(
     {

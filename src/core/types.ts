@@ -1,38 +1,21 @@
-import { Client, Collection, Message } from 'discord.js';
+import { Message, PermissionString } from 'discord.js';
 import { Document } from 'mongoose';
-declare module '*.png' {
-    const value: any;
-    export default value;
+import { Kyouka } from './Kyouka';
+
+export enum CommandCategory {
+    ANIMATION = 'animation',
+    DEVELOPER = 'developer',
+    MODERATION = 'moderation',
 }
 
-interface CommandInterface {
+export interface ICommand {
     title: string;
     description: string;
-    args: string;
-    aliases: Array<string>;
-    run: run1 | run2 | run3;
+    aliases: string[];
+    permission: PermissionString[];
+    category: CommandCategory;
+    execute: (kyouka: Kyouka, message: Message, args: string[]) => {};
 }
-
-interface run1 {
-    (client: Client, message: Message, args: string[]): Promise<any> | any;
-}
-
-interface run2 {
-    (
-        client: Client,
-        message: Message,
-        args: string[],
-        prefixCollection: Collection<string, string>
-    ): Promise<Message | undefined> | Promise<any> | any;
-}
-
-interface run3 {
-    (message: Message, args: string[]):
-        | Promise<Message | undefined>
-        | Promise<any>
-        | any;
-}
-
 interface MuteDocument extends Document {
     guild_id: string;
     user_id: string;
