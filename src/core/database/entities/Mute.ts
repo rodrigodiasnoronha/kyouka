@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { MuteDocument } from '../../types';
+import { MuteDocument } from '../../../types';
 
 const muteSchema = new Schema(
     {
