@@ -16,15 +16,16 @@ export interface ICommand {
     category: CommandCategory;
     execute: (kyouka: Kyouka, message: Message, args: string[]) => {};
 }
-interface MuteDocument extends Document {
+
+export interface MuteDocument extends Document {
     guild_id: string;
     user_id: string;
     reason?: string;
     mute_time: Date;
-    muted_by_id: string; // arma
+    muted_by_id: string;
 }
 
-interface GuildModelInterface extends Document {
+export interface GuildModelInterface extends Document {
     guild_name: string;
     guild_id: string;
     autorole_status: 'on' | 'off';

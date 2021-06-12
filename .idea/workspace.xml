@@ -23,10 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/creator/status.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/moderation/ban.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/moderation/ban.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/events/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/events/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Kyouka.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Kyouka.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/commands/animation/Kiss.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/commands/animation/Kiss.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/database/entities/Guild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/database/entities/Guild.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -57,8 +67,9 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,8 +80,7 @@
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="node" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -140,6 +150,9 @@
       <workItem from="1603394558693" duration="3627000" />
       <workItem from="1603398485550" duration="3045000" />
       <workItem from="1603498965416" duration="4627000" />
+      <workItem from="1623534393556" duration="60000" />
+      <workItem from="1623534482187" duration="619000" />
+      <workItem from="1623535129805" duration="3175000" />
     </task>
     <servers />
   </component>
@@ -157,75 +170,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="131" y="10" width="1084" height="757" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603316511975">
-      <screen x="0" y="0" width="1366" height="767" />
-    </state>
-    <state x="131" y="33" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.741@0.0.1366.741" timestamp="1603042317005" />
-    <state x="131" y="10" width="1084" height="757" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.767@0.0.1366.767" timestamp="1603316511975" />
-    <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601860177063">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601860177063" />
-    <state x="406" y="140" width="530" height="497" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603502234107">
-      <screen x="0" y="0" width="1366" height="767" />
-    </state>
-    <state x="406" y="140" width="530" height="497" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.767@0.0.1366.767" timestamp="1603502234107" />
-    <state x="426" y="221" width="501" height="278" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602972226292">
-      <screen x="0" y="0" width="1366" height="736" />
-    </state>
-    <state x="426" y="221" width="501" height="278" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.736@0.0.1366.736" timestamp="1602972226292" />
-    <state x="510" y="151" width="430" height="481" key="FileChooserDialogImpl" timestamp="1603316509362">
-      <screen x="0" y="0" width="1366" height="767" />
-    </state>
-    <state x="511" y="129" width="424" height="478" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1602983318646" />
-    <state x="511" y="130" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.741@0.0.1366.741" timestamp="1603046009840" />
-    <state x="510" y="151" key="FileChooserDialogImpl/0.0.1366.767@0.0.1366.767" timestamp="1603316509362" />
-    <state width="1345" height="112" key="GridCell.Tab.0.bottom" timestamp="1602530774977">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="112" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602530774977" />
-    <state width="1345" height="112" key="GridCell.Tab.0.center" timestamp="1602530774976">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="112" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
-    <state width="1345" height="112" key="GridCell.Tab.0.left" timestamp="1602530774976">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="112" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
-    <state width="1345" height="112" key="GridCell.Tab.0.right" timestamp="1602530774976">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="112" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602530774976" />
-    <state x="243" y="18" width="992" height="727" key="SettingsEditor" timestamp="1603499725662">
-      <screen x="0" y="0" width="1366" height="767" />
-    </state>
-    <state x="294" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602022012176" />
-    <state x="229" y="6" width="998" height="730" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1602983334351" />
-    <state x="229" y="9" width="992" height="727" key="SettingsEditor/0.0.1366.741@0.0.1366.741" timestamp="1603046105394" />
-    <state x="243" y="18" width="992" height="727" key="SettingsEditor/0.0.1366.767@0.0.1366.767" timestamp="1603499725662" />
-    <state width="498" height="451" key="SwitcherDM" timestamp="1602984180703">
-      <screen x="0" y="0" width="1366" height="736" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1601861194787" />
-    <state width="498" height="451" key="SwitcherDM/0.0.1366.736@0.0.1366.736" timestamp="1602984180703" />
-    <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601861659052">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1601861659052" />
-    <state x="339" y="171" key="run.anything.popup" timestamp="1603500548822">
-      <screen x="0" y="0" width="1366" height="767" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601864070874" />
-    <state x="339" y="164" key="run.anything.popup/0.0.1366.736@0.0.1366.736" timestamp="1602977751211" />
-    <state x="339" y="171" key="run.anything.popup/0.0.1366.767@0.0.1366.767" timestamp="1603500548822" />
-    <state x="346" y="52" width="672" height="715" key="search.everywhere.popup" timestamp="1603502622922">
-      <screen x="0" y="0" width="1366" height="767" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602809678077" />
-    <state x="346" y="50" width="672" height="686" key="search.everywhere.popup/0.0.1366.736@0.0.1366.736" timestamp="1602983384026" />
-    <state x="346" y="52" width="672" height="715" key="search.everywhere.popup/0.0.1366.767@0.0.1366.767" timestamp="1603502622922" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

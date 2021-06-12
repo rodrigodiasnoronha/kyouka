@@ -11,6 +11,6 @@ export default class Kiss implements ICommand {
     public permission: PermissionString[] = [];
 
     public async execute(kyouka: Kyouka, message: Message, args: string[]) {
-        return message.reply('kiss');
+        return message.react('❤️');
     }
 }
