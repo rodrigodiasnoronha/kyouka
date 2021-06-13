@@ -1,0 +1,24 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "docker",
+  "password": "docker",
+  "database": "kyouka_db",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "src/core/database/entities/**/*.ts"
+  ],
+  "migrations": [
+    "src/core/database/migrations/**/*.ts"
+  ],
+  "subscribers": [
+    "src/core/database/subscribers/**/*.ts"
+  ],
+  "cli": {
+    "entitiesDir": "src/core/database/entities",
+    "migrationsDir": "src/core/database/migrations",
+    "subscribersDir": "src/core/database/subscribers"
+  }
+}

@@ -23,12 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b67c4e-ac9a-4f99-bd0f-b280538f5003" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Kyouka.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Kyouka.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/commands/animation/Kiss.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/commands/animation/Kiss.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/database/entities/Guild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/database/entities/Guild.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/createGuild.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +158,7 @@
       <workItem from="1603498965416" duration="4627000" />
       <workItem from="1623534393556" duration="60000" />
       <workItem from="1623534482187" duration="619000" />
-      <workItem from="1623535129805" duration="3175000" />
+      <workItem from="1623535129805" duration="5979000" />
     </task>
     <servers />
   </component>
