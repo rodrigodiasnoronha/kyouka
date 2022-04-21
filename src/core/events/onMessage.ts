@@ -1,28 +1,34 @@
 import { Message } from 'discord.js';
+
 import { Bot } from '../Bot';
-// import { GuildService } from '../services/GuildService';
+
+// services
+import { GuildService } from '../services/GuildService';
+
+// types
 import { BotCommandCategory } from '../types';
 
 export async function onMessage(bot: Bot, message: Message) {
     if (message.author.bot || message.webhookID || !message.guild || message.channel.type != 'text') return;
 
     // salva se o servidor não estiver registrado
-    // let guild = kyouka.guildCollection.get(message.guild.id);
-    // if (!guild) {
-    //     let guildService = new GuildService();
-    //     guild = await guildService.findByDiscordGuild(message.guild);
-    //     kyouka.guildCollection.set(guild._id, guild);
-    // }
+    let guild = bot.guildCollection.get(message.guild.id);
+    if (guild == undefined) {
+        let guildService = new GuildService();
 
-    const prefix = process.env.BOT_PREFIX as string;
-    if (!message.content.startsWith(prefix)) return;
+        try {
+            guild = await guildService.findOrCreateGuild(message.guild);
+            bot.guildCollection.set(guild.id, guild);
+        } catch (err) {
+            return await message.channel.send('erro ' + JSON.stringify(err))
+        }
+    }
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    if (!message.content.startsWith(guild.guild_prefix)) return;
+
+    const args = message.content.slice(guild.guild_prefix.length).trim().split(/ +/);
     const command = args.shift();
     const commandTyped = command ? command.toLowerCase() : '';
-
-    
-    
 
     for (let command of bot.commands) {
         if (command.aliases.includes(commandTyped)) {
@@ -32,6 +38,10 @@ export async function onMessage(bot: Bot, message: Message) {
             });
 
             switch (command.category) {
+                case BotCommandCategory.UTILTITY:
+                    await command.execute(bot, message, args);
+                    break;
+
                 case BotCommandCategory.ANIMATION:
                     await command.execute(bot, message, args);
                     break;

@@ -1,5 +1,4 @@
 import { Message, PermissionString } from 'discord.js';
-import packageJson from '../../../../package.json'
 
 import { BotCommand, BotCommandCategory } from '../../types';
 
@@ -15,6 +14,6 @@ export default class Version implements BotCommand {
     public permission: PermissionString[] = [];
 
     async execute(bot: Bot, message: Message, args: string[]): Promise<void> {
-        await message.react('❤️');
+        await message.reply('version 0.0.1')
     }
 }

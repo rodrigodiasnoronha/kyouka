@@ -25,6 +25,11 @@ import type { Bot } from './Bot'
 
     }
 
+    export enum StatusRole {
+        ON = 'on',
+        OFF = 'off'
+    }
+
 
 /**
  * 
