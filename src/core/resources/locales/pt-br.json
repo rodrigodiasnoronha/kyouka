@@ -1,0 +1,12 @@
+{
+    "name": "pt-br",
+    "commands": [
+        {
+            "name": "kiss",
+            "info": {
+                "title": "Beijar",
+                "description": "Beije alguém"
+            }
+        }
+    ]
+}

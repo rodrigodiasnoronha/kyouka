@@ -1,0 +1,12 @@
+{
+    "name": "en-us",
+    "commands": [
+        {
+            "name": "kiss",
+            "info": {
+                "title": "Kiss",
+                "description": "Kiss someone"
+            }   
+        }
+    ]
+}
