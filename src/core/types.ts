@@ -27,6 +27,11 @@ export enum StatusRole {
     OFF = 'off',
 }
 
+export enum EMOJIS {
+    X = '❌',
+    WHITE_CHECK_MARK = '✅',
+}
+
 /**
  *
  * Language types

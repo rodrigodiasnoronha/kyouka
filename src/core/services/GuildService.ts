@@ -12,4 +12,8 @@ export class GuildService {
     async findOrCreateGuild(guild: Guild): Promise<GuildEntity> {
         return await this.guildRepository.findOrCreateGuild(guild);
     }
+
+    async changeGuildLanguage(guildEntity: GuildEntity, language: string): Promise<GuildEntity> {
+        return await this.guildRepository.changeGuildLanguage(guildEntity, language);
+    }
 }

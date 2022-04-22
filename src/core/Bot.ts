@@ -20,7 +20,7 @@ export class Bot {
     private _prefix: string;
     private _client: Client;
     private _commands: BotCommand[];
-    private _supportedLanguages: Language[];
+    private _supportedLanguages: string[];
     private _guildCollection: Collection<string, GuildEntity>;
     private _i18next: i18n;
 
@@ -64,6 +64,10 @@ export class Bot {
 
     setGuildInCollection(guildEntity: GuildEntity): void {
         this._guildCollection.set(guildEntity.id, guildEntity);
+    }
+
+    isSupportedLanguage(language: string) {
+        return this.supportedLanguages.includes(language)
     }
 
     getGuildById(id: string): GuildEntity | undefined {

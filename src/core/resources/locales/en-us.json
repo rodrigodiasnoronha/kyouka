@@ -1,14 +1,14 @@
 {
     "name": "enUS",
     "commands": {
-        "kiss": {
+        "language": {
             "info": {
-                "title": "Kiss",
-                "description": "Kiss someone",
-                "args": ["@user"]
+                "title": "",
+                "description": "",
+                "args": ["new-language"]
             },
             "messages": {
-                "kiss": "{{user}} kissed {{user_2}}."
+                "language": "I am set to speak in English language."
             }
         }
     },

@@ -11,8 +11,8 @@ export class LanguageManager {
      */
     static getSupportedLanguages(
         dirPath: string = path.resolve(__dirname, '..', 'resources', 'locales'),
-        arrayLanguages: Language[] = []
-    ): Language[] {
+        arrayLanguages: string[] = []
+    ): string[] {
         const files = fs.readdirSync(dirPath);
         arrayLanguages = [...arrayLanguages];
 
@@ -30,5 +30,9 @@ export class LanguageManager {
         }
 
         return arrayLanguages;
+    }
+
+    static isSupportedLang(lang: string, arraySupportedLanguages: string[]) {
+        return arraySupportedLanguages.includes(lang);
     }
 }

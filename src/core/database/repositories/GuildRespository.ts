@@ -4,7 +4,7 @@ import { AppDataSource } from '../data-source';
 import { GuildEntity } from '../entities/GuildEntity';
 
 export const GuildRepository = AppDataSource.getRepository(GuildEntity).extend({
-    async findOrCreateGuild(guild: Guild) {
+    async findOrCreateGuild(guild: Guild): Promise<GuildEntity> {
         let guild_db = await this.findOne({ where: { guild_id: guild.id } });
 
         if (guild_db) {
@@ -16,5 +16,10 @@ export const GuildRepository = AppDataSource.getRepository(GuildEntity).extend({
 
             return guild_db;
         }
+    },
+
+    async changeGuildLanguage(guildEntity: GuildEntity, language: string): Promise<GuildEntity> {
+        guildEntity.guild_language = language;
+        return await this.save(guildEntity);
     },
 });
