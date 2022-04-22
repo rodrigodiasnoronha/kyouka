@@ -1,9 +1,11 @@
 {
+    "name": "ptBR",
     "commands": {
         "kiss": {
             "info": {
                 "title": "Beijar",
-                "description": "Beije alguém"
+                "description": "Beije alguém",
+                "args": ["@usuario"]
             },
             "messages": {
                 "kiss": "{{user}} beijou {{user_2}}."

@@ -1,18 +1,21 @@
 import i18next from 'i18next';
-import en from '../resources/locales/en-us.json';
+import enUS from '../resources/locales/en-us.json';
 import ptBR from '../resources/locales/pt-br.json';
 
-i18next.init({
-    lng: 'ptBR',
-    debug: true,
+// cache
+import ChainedBackend from 'i18next-chained-backend';
+import LocalStorageBackend from 'i18next-localstorage-backend';
+
+i18next.use(ChainedBackend).init({
+    lng: 'ptBR', // default language
+    debug: false,
     interpolation: { escapeValue: false },
     resources: {
-        'en-us': {
-            translation: en,
-        },
-        ptBR: {
-            translation: ptBR,
-        },
+        enUS: { translation: enUS },
+        ptBR: { translation: ptBR },
+    },
+    backend: {
+    backends: [LocalStorageBackend],
     },
 });
 

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { i18next } from './config/i18next';
-import { i18n } from 'i18next';
+import type { i18n } from 'i18next';
 import { Client, Collection } from 'discord.js';
 
 import colors from 'colors';
@@ -11,31 +11,62 @@ import { CommandManager } from './managers/CommandManager';
 //events
 import { onMessage } from './events/onMessage';
 
-import { BotCommand } from './types';
+import { BotCommand, Language } from './types';
 import type { GuildEntity } from './database/entities/GuildEntity';
+import { LanguageManager } from './managers/LanguageManager';
 
 export class Bot {
-    public token: string;
-    public prefix: string;
-    public client: Client;
-    public commands: BotCommand[];
-    public guildCollection: Collection<string, GuildEntity>;
-    public i18next: i18n;
+    private _token: string;
+    private _prefix: string;
+    private _client: Client;
+    private _commands: BotCommand[];
+    private _supportedLanguages: Language[];
+    private _guildCollection: Collection<string, GuildEntity>;
+    private _i18next: i18n;
 
     constructor(token: string, prefix: string) {
-        this.token = token;
-        this.prefix = prefix;
-        this.client = new Client();
+        this._token = token;
+        this._prefix = prefix;
+        this._client = new Client();
 
-        this.commands = CommandManager.getAllCommands();
-        this.guildCollection = new Collection();
-        this.i18next = i18next;
+        this._supportedLanguages = LanguageManager.getSupportedLanguages();
+        this._commands = CommandManager.getAllCommands();
+        this._guildCollection = new Collection();
+        this._i18next = i18next;
+    }
+
+    get token() {
+        return this._token;
+    }
+
+    get prefix() {
+        return this._prefix;
+    }
+
+    get i18next() {
+        return this._i18next;
+    }
+
+    get commands() {
+        return this._commands;
+    }
+
+    get supportedLanguages() {
+        return this._supportedLanguages;
     }
 
     async start(): Promise<void> {
-        await this.client.login(this.token);
+        await this._client.login(this._token);
 
-        this.client.on('ready', () => console.log(colors.green('bot started')));
-        this.client.on('message', (message) => onMessage(this, message));
+        this._client.on('ready', () => console.log(colors.green('bot started')));
+        this._client.on('message', (message) => onMessage(this, message));
+    }
+
+    setGuildInCollection(guildEntity: GuildEntity): void {
+        this._guildCollection.set(guildEntity.id, guildEntity);
+    }
+
+    getGuildById(id: string): GuildEntity | undefined {
+        return this._guildCollection.get(id);
     }
 }

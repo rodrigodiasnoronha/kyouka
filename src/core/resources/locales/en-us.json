@@ -1,9 +1,11 @@
 {
+    "name": "enUS",
     "commands": {
         "kiss": {
             "info": {
                 "title": "Kiss",
-                "description": "Kiss someone"
+                "description": "Kiss someone",
+                "args": ["@user"]
             },
             "messages": {
                 "kiss": "{{user}} kissed {{user_2}}."

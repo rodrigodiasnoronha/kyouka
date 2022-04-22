@@ -22,7 +22,7 @@ export const AppDataSource = new DataSource({
     password: DB_PASS,
     database: DB_NAME,
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [GuildEntity, GuildWelcomeEntity],
     migrations: [],
     subscribers: [],

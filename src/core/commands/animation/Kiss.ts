@@ -1,9 +1,9 @@
 import { Message, PermissionString } from 'discord.js';
 
 import { Bot } from '../../Bot';
+import { GuildEntity } from '../../database/entities/GuildEntity';
 
 import { BotCommand, BotCommandCategory } from '../../types';
-
 
 export default class Kiss implements BotCommand {
     public title = 'Beijar';
@@ -13,12 +13,15 @@ export default class Kiss implements BotCommand {
     public category: BotCommandCategory = BotCommandCategory.ANIMATION;
     public permission: PermissionString[] = [];
 
-    async execute(bot: Bot, message: Message, args: string[]): Promise<void> {
+    async execute(bot: Bot, message: Message, args: string[], guildEntity: GuildEntity): Promise<void> {
         const user = message.mentions.users.first();
 
+        let msg = bot.i18next.t('commands.kiss.messages.kiss', {
+            user: `<@${message.author.id}>`,
+            user_2: `<@${user?.id}>`,
+            lng: guildEntity.guild_language,
+        });
 
-        let msg = bot.i18next.t('commands.kiss.messages.kiss',  { user: `<@${message.author.id}>` , user_2: `<@${user?.id}>` });
         await message.channel.send(msg);
-        
     }
 }

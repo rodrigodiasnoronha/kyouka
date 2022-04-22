@@ -23,7 +23,7 @@ export class GuildEntity {
     @Column({ default: 0, type: 'bigint', comment: "Guild's member count" })
     guild_member_count: number;
 
-    @Column({ default: 'pt-br', nullable: false, comment: "Guild's language" })
+    @Column({ default: 'ptBR', nullable: false, comment: "Guild's language" })
     guild_language: string
 
     
