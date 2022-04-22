@@ -47,7 +47,8 @@ export async function onMessage(bot: Bot, message: Message) {
                     if (hasPermission) {
                         await command.execute(bot, message, args, guild);
                     } else {
-                        // msg q n tem permissão
+                        const reply = bot.i18next.t('error.401', { lng: guild.guild_language });
+                        await message.channel.send(reply);
                     }
 
                     break;
@@ -59,7 +60,8 @@ export async function onMessage(bot: Bot, message: Message) {
                         if (hasPermission) {
                             await command.execute(bot, message, args, guild);
                         } else {
-                            // mostrar msg q n possui permissão
+                            const reply = bot.i18next.t('error.401', { lng: guild.guild_language });
+                            await message.channel.send(reply);
                         }
                     }
 

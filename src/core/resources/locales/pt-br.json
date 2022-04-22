@@ -15,6 +15,7 @@
 
     "error": {
         "unspecific": "Algo de errado aconteceu.",
-        "404": "O comando não foi encontrado."
+        "404": "O comando não foi encontrado.",
+        "401": "Permissão insuficiente para executar esta ação."
     }
 }
