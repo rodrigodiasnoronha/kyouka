@@ -1,19 +1,21 @@
 import 'reflect-metadata';
-import { i18next } from './config/i18next';
-import type { i18n } from 'i18next';
 import { Client, Collection } from 'discord.js';
 
-import colors from 'colors';
-
-// managers
-import { CommandManager } from './managers/CommandManager';
+// config
+import { i18next } from './config/i18next';
 
 //events
 import { onMessage } from './events/onMessage';
+import { onReady } from './events/onReady';
 
-import { BotCommand, Language } from './types';
-import type { GuildEntity } from './database/entities/GuildEntity';
+// managers
+import { CommandManager } from './managers/CommandManager';
 import { LanguageManager } from './managers/LanguageManager';
+
+// types
+import type { i18n } from 'i18next';
+import type { BotCommand } from './types';
+import type { GuildEntity } from './database/entities/GuildEntity';
 
 export class Bot {
     private _token: string;
@@ -35,8 +37,8 @@ export class Bot {
         this._i18next = i18next;
     }
 
-    get token() {
-        return this._token;
+    get client() {
+        return this._client;
     }
 
     get prefix() {
@@ -58,7 +60,7 @@ export class Bot {
     async start(): Promise<void> {
         await this._client.login(this._token);
 
-        this._client.on('ready', () => console.log(colors.green('bot started')));
+        this._client.on('ready', () => onReady(this));
         this._client.on('message', (message) => onMessage(this, message));
     }
 
@@ -67,7 +69,7 @@ export class Bot {
     }
 
     isSupportedLanguage(language: string) {
-        return this.supportedLanguages.includes(language)
+        return this.supportedLanguages.includes(language);
     }
 
     getGuildById(id: string): GuildEntity | undefined {
