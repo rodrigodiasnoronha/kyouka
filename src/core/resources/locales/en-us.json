@@ -1,12 +1,18 @@
 {
-    "name": "en-us",
-    "commands": [
-        {
-            "name": "kiss",
+    "commands": {
+        "kiss": {
             "info": {
                 "title": "Kiss",
                 "description": "Kiss someone"
-            }   
+            },
+            "messages": {
+                "kiss": "{{user}} kissed {{user_2}}."
+            }
         }
-    ]
+    },
+
+    "error": {
+        "unspecific": "Something went wrong.",
+        "404": "The command was not found."
+    }
 }

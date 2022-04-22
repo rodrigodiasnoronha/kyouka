@@ -1,4 +1,6 @@
 import 'reflect-metadata';
+import { i18next } from './config/i18next';
+import { i18n } from 'i18next';
 import { Client, Collection } from 'discord.js';
 
 import colors from 'colors';
@@ -17,7 +19,8 @@ export class Bot {
     public prefix: string;
     public client: Client;
     public commands: BotCommand[];
-    public guildCollection: Collection<string, GuildEntity>
+    public guildCollection: Collection<string, GuildEntity>;
+    public i18next: i18n;
 
     constructor(token: string, prefix: string) {
         this.token = token;
@@ -25,7 +28,8 @@ export class Bot {
         this.client = new Client();
 
         this.commands = CommandManager.getAllCommands();
-        this.guildCollection = new Collection()
+        this.guildCollection = new Collection();
+        this.i18next = i18next;
     }
 
     async start(): Promise<void> {

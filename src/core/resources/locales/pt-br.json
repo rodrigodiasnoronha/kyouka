@@ -1,12 +1,18 @@
 {
-    "name": "pt-br",
-    "commands": [
-        {
-            "name": "kiss",
+    "commands": {
+        "kiss": {
             "info": {
                 "title": "Beijar",
                 "description": "Beije alguém"
+            },
+            "messages": {
+                "kiss": "{{user}} beijou {{user_2}}."
             }
         }
-    ]
+    },
+
+    "error": {
+        "unspecific": "Algo de errado aconteceu.",
+        "404": "O comando não foi encontrado."
+    }
 }
