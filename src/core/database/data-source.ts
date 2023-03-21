@@ -1,6 +1,6 @@
+import 'dotenv/config'; // import necessário pra usar comandos da cli do typeorm
 import { DataSource } from 'typeorm';
-import { GuildEntity } from './entities/GuildEntity';
-import { GuildWelcomeEntity } from './entities/GuildWelcomeEntity';
+
 
 const DB_NAME = process.env.DB_NAME as string;
 const DB_PASS = process.env.DB_PASS as string;
@@ -22,8 +22,8 @@ export const AppDataSource = new DataSource({
     password: DB_PASS,
     database: DB_NAME,
     synchronize: true,
-    logging: false,
-    entities: [GuildEntity, GuildWelcomeEntity],
-    migrations: [],
+    logging: true,
+    entities: [__dirname + '/entities/*{.js,.ts}'],
+    migrations: [__dirname + '/migrations/*{.js,.ts}'],
     subscribers: [],
 });
